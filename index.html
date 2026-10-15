@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b09">
+  <meta name="description" content="Auto Lavado HMTZL en Ario de Rosales. Lavado de autos, camionetas y camiones. Cotiza y contáctanos por WhatsApp.">
+  <title>Auto Lavado HMTZL | Tu auto habla por ti</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --green: #00e676;
+      --green-dark: #00a84f;
+      --black: #080b09;
+      --panel: #111713;
+      --muted: #a9b5ad;
+      --white: #f5fff8;
+      --border: rgba(0, 230, 118, .22);
+    }
+
+    body {
+      background-color: var(--black);
+      color: var(--white);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+
+    .border-custom { border-color: var(--border); }
+    .bg-panel { background-color: var(--panel); }
+    .text-green-brand { color: var(--green); }
+    .bg-green-brand { background-color: var(--green); }
+
+    .wheel-card {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 25px 15px 20px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: linear-gradient(145deg, #151e17, #0d110e);
+      transition: transform .2s, border-color .2s;
+    }
+
+    .wheel-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--green);
+    }
+
+    .wheel {
+      position: relative;
+      display: grid;
+      place-items: center;
+      width: 100px;
+      height: 100px;
+      margin-bottom: 18px;
+      border: 10px solid #333b35;
+      border-radius: 50%;
+      background: radial-gradient(circle, #18251c 0 31%, #080b09 33% 52%, #344139 54% 63%, #101410 65%);
+      box-shadow: 0 0 0 2px #060806, 0 0 20px rgba(0,230,118,.12);
+    }
+
+    .wheel::before {
+      content: "";
+      position: absolute;
+      inset: 8px;
+      border: 2px dashed rgba(0,230,118,.7);
+      border-radius: 50%;
+    }
+
+    .pulse-dot {
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: .4; }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+  <!-- Header / Topbar -->
+  <header class="bg-[#101712] border-b border-custom sticky top-0 z-50 backdrop-blur-md bg-opacity-90">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="#inicio" class="flex items-center gap-3 font-black text-lg tracking-wider">
+        <div class="w-10 h-10 rounded-full border-2 border-[#00e676] flex items-center justify-center text-[#00e676] text-sm shadow-[0_0_15px_rgba(0,230,118,0.2)]">
+          H
+        </div>
+        <span>AUTO LAVADO <span class="text-green-brand">HMTZL</span></span>
+      </a>
+
+      <div id="businessStatus" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-custom bg-[#0b1710] text-[#00e676] text-xs font-bold">
+        <span class="w-2 h-2 rounded-full bg-current pulse-dot"></span>
+        <span id="statusText">Consultando horario...</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="inicio" class="relative overflow-hidden py-16 md:py-24 border-b border-custom bg-gradient-to-br from-[#111a13] to-[#080b09]">
+      <div class="max-w-6xl mx-auto px-4 relative z-10">
+        <div class="max-w-2xl">
+          <span class="inline-block border border-custom rounded px-2.5 py-1 text-xs font-black tracking-widest text-green-brand mb-4">
+            CUIDAMOS TU CAMINO
+          </span>
+          <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-none mb-4">
+            TU AUTO HABLA POR TI.<br><span class="text-green-brand">QUE HABLE BIEN.</span>
+          </h1>
+          <p class="text-gray-300 text-base md:text-lg mb-8 leading-relaxed">
+            Dale a tu vehículo la limpieza que merece. Atención directa, precios claros y servicio en Ario de Rosales.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="#paquetes" class="inline-flex items-center gap-2 bg-green-brand text-[#061109] font-black px-6 py-3.5 rounded-lg hover:bg-[#66ffa7] transition-all transform active:scale-95">
+              VER PAQUETES <i data-lucide="arrow-down" class="w-4 h-4"></i>
+            </a>
+            <a href="https://wa.me/524251079351?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20lavado%20de%20mi%20veh%C3%ADculo." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 border border-green-brand text-green-brand font-black px-6 py-3.5 rounded-lg hover:bg-[rgba(0,230,118,0.1)] transition-all">
+              WHATSAPP <i data-lucide="external-link" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="paquetes" class="py-16">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12">
+          <span class="border border-custom rounded px-2.5 py-1 text-xs font-black tracking-widest text-green-brand">
+            NUESTROS SERVICIOS
+          </span>
+          <h2 class="text-3xl md:text-4xl font-bold mt-2">Elige tu paquete</h2>
+          <p class="text-[#a9b5ad] text-sm mt-1">Selecciona el tipo de vehículo y consulta el precio de tu lavado.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Item 1 -->
+          <div class="wheel-card">
+            <div class="wheel">
+              <span class="text-green-brand text-2xl font-black">H</span>
+            </div>
+            <h3 class="text-lg font-bold mb-1">Auto chico</h3>
+            <p class="text-xs text-[#a9b5ad] mb-4 min-h-[32px]">Para mantener tu auto limpio y presentable.</p>
+            <div class="text-3xl font-black text-green-brand mb-4">$120</div>
+            <button class="choose-vehicle w-full py-2.5 px-4 border border-green-brand text-green-brand font-bold text-xs rounded-lg hover:bg-[rgba(0,230,118,0.1)] transition-colors" data-vehicle="chico">
+              ELEGIR PAQUETE
+            </button>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="wheel-card">
+            <div class="wheel">
+              <span class="text-green-brand text-2xl font-black">H</span>
+            </div>
+            <h3 class="text-lg font-bold mb-1">Camioneta mediana</h3>
+            <p class="text-xs text-[#a9b5ad] mb-4 min-h-[32px]">Un lavado para tu camioneta de uso diario.</p>
+            <div class="text-3xl font-black text-green-brand mb-4">$150</div>
+            <button class="choose-vehicle w-full py-2.5 px-4 border border-green-brand text-green-brand font-bold text-xs rounded-lg hover:bg-[rgba(0,230,118,0.1)] transition-colors" data-vehicle="mediana">
+              ELEGIR PAQUETE
+            </button>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="wheel-card">
+            <div class="wheel">
+              <span class="text-green-brand text-2xl font-black">H</span>
+            </div>
+            <h3 class="text-lg font-bold mb-1">Vehículo grande</h3>
+            <p class="text-xs text-[#a9b5ad] mb-4 min-h-[32px]">Para vehículos de mayor tamaño.</p>
+            <div class="text-3xl font-black text-green-brand mb-4">$180</div>
+            <button class="choose-vehicle w-full py-2.5 px-4 border border-green-brand text-green-brand font-bold text-xs rounded-lg hover:bg-[rgba(0,230,118,0.1)] transition-colors" data-vehicle="grande">
+              ELEGIR PAQUETE
+            </button>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="wheel-card">
+            <div class="wheel">
+              <span class="text-green-brand text-2xl font-black">H</span>
+            </div>
+            <h3 class="text-lg font-bold mb-1">Camión</h3>
+            <p class="text-xs text-[#a9b5ad] mb-4 min-h-[32px]">Servicio para vehículos de trabajo.</p>
+            <div class="text-3xl font-black text-green-brand mb-4">$350</div>
+            <button class="choose-vehicle w-full py-2.5 px-4 border border-green-brand text-green-brand font-bold text-xs rounded-lg hover:bg-[rgba(0,230,118,0.1)] transition-colors" data-vehicle="camion">
+              ELEGIR PAQUETE
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="cotizador" class="py-16 bg-[#0d120e] border-y border-custom">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-10">
+          <span class="border border-custom rounded px-2.5 py-1 text-xs font-black tracking-widest text-green-brand">
+            COTIZACIÓN
+          </span>
+          <h2 class="text-3xl md:text-4xl font-bold mt-2">Calcula tu lavado</h2>
+        </div>
+
+        <div class="max-w-xl mx-auto bg-panel border border-custom p-6 md:p-8 rounded-2xl">
+          <div class="mb-6">
+            <label for="vehicle" class="block text-sm font-bold mb-2">Tipo de vehículo</label>
+            <select id="vehicle" class="w-full bg-[#090d0a] border border-[#354239] text-white rounded-lg p-3 outline-none focus:border-green-brand transition-colors">
+              <option value="chico">Auto chico — $120</option>
+              <option value="mediana">Camioneta mediana — $150</option>
+              <option value="grande">Vehículo grande — $180</option>
+              <option value="camion">Camión — $350</option>
+            </select>
+          </div>
+
+          <div class="mb-6">
+            <label class="block text-sm font-bold mb-3">Servicios adicionales</label>
+            <div class="space-y-3">
+              <label class="flex justify-between items-center p-3 border-b border-[#273129] cursor-pointer hover:bg-[#18231b] rounded transition-colors">
+                <span class="flex items-center gap-2 text-sm">
+                  <input type="checkbox" class="extra accent-[#00e676] w-4 h-4" value="encerado" data-name="Encerado" data-price="50">
+                  Encerado
+                </span>
+                <span class="text-green-brand font-bold text-sm">+$50</span>
+              </label>
+
+              <label class="flex justify-between items-center p-3 border-b border-[#273129] cursor-pointer hover:bg-[#18231b] rounded transition-colors">
+                <span class="flex items-center gap-2 text-sm">
+                  <input type="checkbox" class="extra accent-[#00e676] w-4 h-4" value="motor" data-name="Limpieza de motor" data-price="80">
+                  Limpieza de motor
+                </span>
+                <span class="text-green-brand font-bold text-sm">+$80</span>
+              </label>
+
+              <label class="flex justify-between items-center p-3 border-b border-[#273129] cursor-pointer hover:bg-[#18231b] rounded transition-colors">
+                <span class="flex items-center gap-2 text-sm">
+                  <input type="checkbox" class="extra accent-[#00e676] w-4 h-4" value="interiores" data-name="Limpieza de interiores" data-price="60">
+                  Limpieza de interiores
+                </span>
+                <span class="text-green-brand font-bold text-sm">+$60</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="bg-[#08140c] border border-custom p-5 rounded-xl text-center mb-6">
+            <p class="text-xs text-[#a9b5ad]">Total estimado</p>
+            <div class="text-4xl font-black text-green-brand my-1" id="total">$120</div>
+            <p class="text-[11px] text-[#a9b5ad]">El precio final puede variar según las condiciones del vehículo.</p>
+          </div>
+
+          <button id="sendQuote" class="w-full bg-green-brand text-[#061109] font-black py-3.5 rounded-lg hover:bg-[#66ffa7] transition-colors flex justify-center items-center gap-2">
+            COTIZAR POR WHATSAPP <i data-lucide="send" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="ubicacion" class="py-16">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-10">
+          <span class="border border-custom rounded px-2.5 py-1 text-xs font-black tracking-widest text-green-brand">
+            ENCUÉNTRANOS
+          </span>
+          <h2 class="text-3xl md:text-4xl font-bold mt-2">Visítanos en HMTZL</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-panel border border-custom p-6 rounded-2xl">
+            <h3 class="text-green-brand text-xl font-bold mb-4 flex items-center gap-2">
+              <i data-lucide="info" class="w-5 h-5"></i> Información del negocio
+            </h3>
+            <div class="space-y-4 text-sm text-gray-300">
+              <p>
+                <strong class="text-white block mb-1">Dirección:</strong>
+                Camelinas 3, Colonia Obrera, C.P. 61830, Ario de Rosales, Michoacán.
+              </p>
+              <p>
+                <strong class="text-white block mb-1">Horario:</strong>
+                Todos los días, de 9:00 a. m. a 5:00 p. m.
+              </p>
+              <p>
+                <strong class="text-white block mb-1">WhatsApp:</strong>
+                425 107 9351
+              </p>
+            </div>
+            <a href="https://wa.me/524251079351" target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center gap-2 bg-green-brand text-[#061109] font-black w-full py-3 rounded-lg mt-6 hover:bg-[#66ffa7] transition-colors">
+              CONTACTAR DIRECTAMENTE
+            </a>
+          </div>
+
+          <div class="bg-gradient-to-b from-[#101711] to-[#080b09] border border-custom p-6 rounded-2xl flex flex-col justify-center items-center text-center">
+            <i data-lucide="map-pin" class="w-12 h-12 text-green-brand mb-3"></i>
+            <h3 class="text-xl font-bold mb-2">Cómo llegar</h3>
+            <p class="text-sm text-[#a9b5ad] mb-6 max-w-xs">Abre nuestra ubicación en Google Maps para consultar la mejor ruta desde tu ubicación.</p>
+            <a href="https://maps.app.goo.gl/jM9KqxTmAisd4eXG6" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 border border-green-brand text-green-brand font-black py-3 px-6 rounded-lg hover:bg-[rgba(0,230,118,0.1)] transition-colors">
+              ABRIR GOOGLE MAPS <i data-lucide="navigation" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#050705] border-t border-custom py-8 text-center text-xs text-[#a9b5ad]">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-green-brand font-black text-xl tracking-widest">HMTZL</div>
+      <p class="mt-1">Auto Lavado · Ario de Rosales, Michoacán</p>
+      <div class="text-white font-bold my-2">TU AUTO HABLA POR TI. QUE HABLE BIEN.</div>
+      <p>© <span id="year"></span> Auto Lavado HMTZL. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/524251079351?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20Auto%20Lavado%20HMTZL." target="_blank" rel="noopener noreferrer" class="fixed bottom-5 right-5 w-14 h-14 bg-[#13c963] text-black font-black rounded-full flex items-center justify-center border-2 border-[#b2ffd0] shadow-lg hover:scale-110 transition-transform z-50" aria-label="Contactar por WhatsApp">
+    <i data-lucide="message-circle" class="w-7 h-7 text-black"></i>
+  </a>
+
+  <script>
+    lucide.createIcons();
+
+    const WHATSAPP = "524251079351";
+    const vehicles = {
+      chico: { name: "Auto chico", price: 120 },
+      mediana: { name: "Camioneta mediana", price: 150 },
+      grande: { name: "Vehículo grande", price: 180 },
+      camion: { name: "Camión", price: 350 }
+    };
+
+    const vehicleSelect = document.getElementById("vehicle");
+    const totalDisplay = document.getElementById("total");
+    const extras = document.querySelectorAll(".extra");
+
+    function money(amount) {
+      return amount.toLocaleString("es-MX", {
+        style: "currency",
+        currency: "MXN",
+        maximumFractionDigits: 0
+      });
+    }
+
+    function selectedExtras() {
+      return Array.from(extras)
+        .filter(extra => extra.checked)
+        .map(extra => ({
+          name: extra.dataset.name,
+          price: Number(extra.dataset.price)
+        }));
+    }
+
+    function calculateTotal() {
+      const vehicle = vehicles[vehicleSelect.value];
+      const additions = selectedExtras().reduce((sum, extra) => sum + extra.price, 0);
+      const total = vehicle.price + additions;
+      totalDisplay.textContent = money(total);
+      return total;
+    }
+
+    vehicleSelect.addEventListener("change", calculateTotal);
+    extras.forEach(extra => extra.addEventListener("change", calculateTotal));
+
+    document.querySelectorAll(".choose-vehicle").forEach(button => {
+      button.addEventListener("click", () => {
+        vehicleSelect.value = button.dataset.vehicle;
+        calculateTotal();
+        document.getElementById("cotizador").scrollIntoView({ behavior: "smooth" });
+      });
+    });
+
+    document.getElementById("sendQuote").addEventListener("click", () => {
+      const vehicle = vehicles[vehicleSelect.value];
+      const extrasSelected = selectedExtras();
+      const total = calculateTotal();
+
+      let message = `¡Hola! Me interesa cotizar un lavado\n\n`;
+      message += `*Vehículo:* ${vehicle.name}\n`;
+      message += `*Precio base:* ${money(vehicle.price)}\n`;
+
+      if (extrasSelected.length > 0) {
+        message += `\n*Servicios adicionales:*\n`;
+        extrasSelected.forEach(extra => {
+          message += `- ${extra.name}: ${money(extra.price)}\n`;
+        });
+      }
+
+      message += `\n*Total estimado:* ${money(total)}\n`;
+      message += `\n¿Cuál es el siguiente paso para agendar?`;
+
+      window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(message)}`, "_blank");
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function checkBusinessStatus() {
+      const now = new Date();
+      const day = now.getDay();
+      const hour = now.getHours();
+
+      const isOpen = day >= 0 && day <= 6 && hour >= 9 && hour < 17;
+      const statusEl = document.getElementById("businessStatus");
+      const statusTextEl = document.getElementById("statusText");
+
+      if (isOpen) {
+        statusEl.className = "inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-custom bg-[#0b1710] text-[#00e676] text-xs font-bold";
+        statusTextEl.textContent = "Abierto ahora";
+      } else {
+        statusEl.className = "inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-amber-500/30 bg-[#21180d] text-amber-400 text-xs font-bold";
+        statusTextEl.textContent = "Cerrado por el momento";
+      }
+    }
+
+    checkBusinessStatus();
+    setInterval(checkBusinessStatus, 60000);
+  </script>
+</body>
+</html># Lava-tu-auto-aqui
+Servicio de lavado de autos 
