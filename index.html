@@ -6,6 +6,316 @@
     <title>HMTZL Auto Lavado | Ario de Rosales</title>
     <style>
         :root {
+            --color-primary: #ff003c; /* Rojo Neón Deportivo */
+            --color-primary-hover: #ff2a55;
+            --color-bg: #0a0a0c; /* Fondo carbón ultra oscuro */
+            --color-surface: #141419; /* Color de tarjetas */
+            --color-surface-hover: #1c1c24;
+            --color-text: #ffffff;
+            --color-text-muted: #b0b0ba;
+            --color-whatsapp: #25d366;
+            --glow-red: rgba(255, 0, 60, 0.4);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Encabezado */
+        header {
+            background: rgba(20, 20, 25, 0.85);
+            backdrop-filter: blur(12px);
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--color-primary);
+            box-shadow: 0 4px 20px var(--glow-red);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--color-text);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--color-primary);
+            text-shadow: 0 0 10px var(--glow-red);
+        }
+
+        nav a {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            margin-left: 1.8rem;
+            transition: var(--transition);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover {
+            color: var(--color-primary);
+            text-shadow: 0 0 8px var(--glow-red);
+        }
+
+        /* Hero / Inicio */
+        .hero {
+            padding: 7rem 2rem 5rem 2rem;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(255,0,60,0.15) 0%, rgba(10,10,12,0.95) 70%),
+                        url('https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+            position: relative;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255, 0, 60, 0.2);
+            color: var(--color-primary);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border: 1px solid var(--color-primary);
+            box-shadow: 0 0 15px var(--glow-red);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.1;
+        }
+
+        .hero h1 span {
+            color: var(--color-primary);
+            text-shadow: 0 0 20px var(--glow-red);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--color-text-muted);
+            max-width: 650px;
+            margin: 0 auto 2.5rem auto;
+        }
+
+        /* Botones Llamativos */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--color-primary), #d00030);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 0 20px var(--glow-red);
+            animation: pulse 2s infinite;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 0 35px var(--color-primary);
+            animation: none;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 0, 60, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 0, 60, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 0, 60, 0); }
+        }
+
+        /* Servicios */
+        .container {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 3.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title span {
+            color: var(--color-primary);
+            text-shadow: 0 0 15px var(--glow-red);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--color-surface);
+            border-radius: 12px;
+            padding: 2.5rem;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            background-color: var(--color-surface-hover);
+            border-color: var(--color-primary);
+            box-shadow: 0 10px 30px rgba(255, 0, 60, 0.2);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        /* Tarjeta Destacada */
+        .card.featured {
+            border: 2px solid var(--color-primary);
+            box-shadow: 0 0 25px var(--glow-red);
+        }
+
+        .card.featured::after {
+            content: 'MÁS POPULAR';
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: var(--color-primary);
+            color: white;
+            font-size: 0.65rem;
+            font-weight: 900;
+            padding: 4px 30px;
+            transform: rotate(45deg);
+            letter-spacing: 1px;
+        }
+
+        .card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .card p {
+            color: var(--color-text-muted);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .price {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--color-primary);
+            text-shadow: 0 0 10px var(--glow-red);
+        }
+
+        /* Contacto */
+        .contact-section {
+            background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-surface) 100%);
+            text-align: center;
+            padding: 5rem 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .contact-section p {
+            color: var(--color-text-muted);
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25d366, #1ebd56);
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+            animation: none;
+        }
+
+        .btn-whatsapp:hover {
+            box-shadow: 0 0 35px rgba(37, 211, 102, 0.8);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #050507;
+            text-align: center;
+            padding: 2rem;
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">HMTZL <span>Auto Lavado</span></div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#contacto">Ubicación</a>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="badge">🔥 El
+ html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMTZL Auto Lavado | Ario de Rosales</title>
+    <style>
+        :root {
             --color-primary: #ff3b30; /* Rojo Deportivo */
             --color-primary-hover: #e02e24;
             --color-bg: #121212; /* Fondo oscuro elegante */
