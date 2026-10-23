@@ -40,7 +40,7 @@
 <label class="field-label" for="vehicle">Tipo de vehículo</label><select class="select" id="vehicle"><option value="chico">Auto chico — $130</option><option value="mediana">Camioneta mediana — $180</option><option value="grande">Vehículo grande — $200</option><option value="camion">Camión — $350</option></select>
 <div style="margin-top:22px"><div class="field-label">Servicios adicionales</div><div class="extras">
 <label class="extra"><span><input type="checkbox" class="extra-check" data-name="Encerado" data-price="100"> Encerado</span><strong>+$100</strong></label>
-<label class="extra"><span><input type="checkbox" class="extra-check" data-name="Limpieza de motor" data-price="120"> Limpieza de motor</span><strong>+$1200</strong></label>
+<label class="extra"><span><input type="checkbox" class="extra-check" data-name="Limpieza de motor" data-price="120"> Limpieza de motor</span><strong>+$120</strong></label>
 <label class="extra"><span><input type="checkbox" class="extra-check" data-name="Limpieza de interiores" data-price="160"> Limpieza de interiores</span><strong>+$160</strong></label>
 </div></div>
 <div class="total-box"><div class="total-label">TOTAL ESTIMADO</div><div class="total" id="total" aria-live="polite">$120</div><p class="fine">El precio final puede variar según las condiciones del vehículo.</p></div>
@@ -87,7 +87,7 @@ document.querySelectorAll('.choose-vehicle').forEach(btn=>btn.addEventListener('
 }));
 document.getElementById('sendQuote').addEventListener('click',()=>{
  const {vehicle,extras,total}=calculate();
- let message='¡Hola! Me interesa cotizar un lavado.\n\n';
+ let message='¡Hola! me interesa saber sobre un lavado.\n\n';
  message+=`Vehículo: ${vehicle.name}\nPrecio base: ${money(vehicle.price)}\n`;
  if(extras.length){message+='\nServicios adicionales:\n';extras.forEach(x=>message+=`- ${x.name}: ${money(x.price)}\n`);}
  message+=`\nTotal estimado: ${money(total)}\n\n¿Cuál es el siguiente paso para agendar?`;
