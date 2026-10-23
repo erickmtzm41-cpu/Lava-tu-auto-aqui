@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMTZL Auto Lavado | Ario de Rosales</title>
+    <style>
+        :root {
+            --color-primary: #ff3b30; /* Rojo Deportivo */
+            --color-primary-hover: #e02e24;
+            --color-bg: #121212; /* Fondo oscuro elegante */
+            --color-surface: #1e1e1e; /* Color de tarjetas */
+            --color-text: #f5f5f7;
+            --color-text-muted: #a1a1a6;
+            --color-whatsapp: #25d366;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--color-surface);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--color-primary);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--color-text);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--color-primary);
+        }
+
+        nav a {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--color-primary);
+        }
+
+        .hero {
+            padding: 5rem 2rem;
+            text-align: center;
+            background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.9)), url('https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--color-text);
+        }
+
+        .hero h1 span {
+            color: var(--color-primary);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--color-text-muted);
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--color-primary);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--color-primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .section-title span {
+            color: var(--color-primary);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--color-surface);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-primary);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-primary);
+        }
+
+        .card p {
+            color: var(--color-text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--color-text);
+        }
+
+        .contact-section {
+            background-color: var(--color-surface);
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .contact-section p {
+            color: var(--color-text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Footer con Derechos Reservados */
+        footer {
+            background-color: #0d0d0d;
+            text-align: center;
+            padding: 2rem;
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">HMTZL <span>Auto Lavado</span></div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#contacto">Ubicación</a>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <h1>Cuidado Profesional para tu <span>Vehículo</span></h1>
+        <p>Expertos en detallado, lavado de carrocería, polveras, llantas y protección especializada en Ario de Rosales.</p>
+        <a href="#servicios" class="btn">Ver Paquetes</a>
+    </section>
+
+    <div id="servicios" class="container">
+        <h2 class="section-title">Nuestros <span>Servicios</span></h2>
+        
+        <div class="services-grid">
+            <div class="card">
+                <h3>Lavado Básico</h3>
+                <p>Lavado de carrocería exterior, limpieza profunda de polveras y llantas con aplicación de productos especializados.</p>
+                <div class="price">Desde $120 MXN</div>
+            </div>
+
+            <div class="card">
+                <h3>Lavado Completo</h3>
+                <p>Incluye exterior, polveras, llantas, aspirado interior a detalle, limpieza de tableros y cristales.</p>
+                <div class="price">Desde $220 MXN</div>
+            </div>
+
+            <div class="card">
+                <h3>Detallado y Cera</h3>
+                <p>Protección de pintura con encerado profesional, hidratación de plásticos y acabado de alta durabilidad.</p>
+                <div class="price">Desde $450 MXN</div>
+            </div>
+        </div>
+    </div>
+
+    <section id="contacto" class="contact-section">
+        <h2 class="section-title">Visítanos en <span>Ario de Rosales</span></h2>
+        <p>Atención personalizada y el mejor cuidado que tu auto merece.</p>
+        <a href="https://wa.me/" class="btn" style="background-color: var(--color-whatsapp);">Contactar por WhatsApp</a>
+    </section>
+
+    <!-- Pie de página con Derechos Reservados -->
+    <footer>
+        <p>&copy; 2026 HMTZL Auto Lavado. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
