@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -44,7 +43,7 @@ section{padding:76px 0}.section-head{text-align:center;max-width:700px;margin:0 
 <div class="calculator"><div class="calc-panel"><h3>01 / Tipo de vehículo</h3>
 <div class="choices">
 <label class="choice"><input type="radio" name="vehiculo" value="chico" checked><span><strong>Auto chico</strong><small>$130 MXN</small></span></label>
-<label class="choice"><input type="radio" name="vehiculo" value="mediana"><span><strong>Camioneta mediana</strong><small>$180 MXN</small></span></label>
+<label class="choice"><input type="radio" name="vehiculo" value="mediana"><span><strong>Camioneta mediana</strong><small>$150 MXN</small></span></label>
 <label class="choice"><input type="radio" name="vehiculo" value="grande"><span><strong>Vehículo grande</strong><small>$180 MXN</small></span></label>
 <label class="choice"><input type="radio" name="vehiculo" value="camion"><span><strong>Camión</strong><small>$350 MXN</small></span></label>
 </div>
@@ -58,7 +57,7 @@ section{padding:76px 0}.section-head{text-align:center;max-width:700px;margin:0 
 </div></div></section>
 <section><div class="wrap"><div class="section-head"><div class="kicker">¿POR QUÉ HMTZL?</div><h2>Atención que se nota en los detalles</h2></div><div class="features">
 <div class="feature"><div class="num">01 / CUIDADO</div><h3>Trato atento a tu vehículo</h3><p>Trabajamos con cuidado y atención en cada servicio.</p></div>
-<div class="feature"><div class="num">02 / CLARIDAD</div><h3>Precios base visibles</h3><p>Arma tu cotización y consulta los adicionales antes de agendar los precios pueden barear.</p></div>
+<div class="feature"><div class="num">02 / CLARIDAD</div><h3>Precios base visibles</h3><p>Arma tu cotización y consulta los adicionales antes de agendar.</p></div>
 <div class="feature"><div class="num">03 / CONTACTO DIRECTO</div><h3>Agenda sin complicaciones</h3><p>Conversa directamente con HMTZL por WhatsApp.</p></div>
 </div></div></section>
 <section id="ubicacion"><div class="wrap"><div class="location"><div class="location-copy"><div class="kicker">ENCUÉNTRANOS</div><h2>Tu próximo lavado está aquí.</h2><p>Visítanos en Colonia Obrera, Ario de Rosales, Michoacán. Escríbenos para consultar disponibilidad o pedir indicaciones.</p>
@@ -72,7 +71,7 @@ section{padding:76px 0}.section-head{text-align:center;max-width:700px;margin:0 
 <a class="wa-float" href="https://wa.me/524251079351?text=Hola%2C%20Auto%20Lavado%20HMTZL." target="_blank" rel="noopener">WhatsApp ↗</a>
 <script>
 const vehicles={chico:{name:"Auto chico",price:130},mediana:{name:"Camioneta mediana",price:150},grande:{name:"Vehículo grande",price:180},camion:{name:"Camión",price:350}};
-const extras={encerado:{name:"Encerado",price:100},motor:{name:"Limpieza de motor",price:100},interiores:{name:"Limpieza de interiores",price:130}};
+const extras={encerado:{name:"Encerado",price:100},motor:{name:"Limpieza de motor",price:100},interiores:{name:"Limpieza de interiores",price:160}};
 const money=n=>new Intl.NumberFormat('es-MX',{style:'currency',currency:'MXN',maximumFractionDigits:0}).format(n);
 function selected(){const key=document.querySelector('input[name="vehiculo"]:checked').value;const add=[...document.querySelectorAll('.extras input:checked')].map(x=>extras[x.value]);return {vehicle:vehicles[key],add,total:vehicles[key].price+add.reduce((s,x)=>s+x.price,0)}}
 function render(){const s=selected();const rows=[s.vehicle,...s.add];document.getElementById('items').innerHTML=rows.map(x=>`<div class="lineitem"><span>${x.name}</span><b>${money(x.price)}</b></div>`).join('');document.getElementById('total').innerHTML=`${money(s.total)} <small style="font-size:13px;color:var(--muted)">MXN</small>`}
