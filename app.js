@@ -143,7 +143,6 @@ function openQuote(next, extra) {
 const quoteModal = document.getElementById("quote-modal");
 const servicesModal = document.getElementById("services-modal");
 
-const siteHeader = document.querySelector(".site-header");
 const menuBtn = document.getElementById("menu-btn");
 
 menuBtn.addEventListener("click", () => {
@@ -154,13 +153,6 @@ menuBtn.addEventListener("click", () => {
   } else {
     openMenu();
   }
-});
-
-siteHeader.addEventListener("mouseenter", () => {
-  if (window.innerWidth < 1024) openMenu();
-});
-siteHeader.addEventListener("mouseleave", () => {
-  if (window.innerWidth < 1024) closeMenu();
 });
 
 document.querySelectorAll("#mobile-nav a").forEach((link) => link.addEventListener("click", closeMenu));
