@@ -96,31 +96,44 @@ function renderQuote() {
 }
 
 function closeMenu() {
-  document.getElementById("mobile-nav").hidden = true;
+  const nav = document.getElementById("mobile-nav");
+  nav.hidden = true;
   document.getElementById("menu-btn").setAttribute("aria-expanded", "false");
+}
+
+function closeServices() {
+  const servicesModal = document.getElementById("services-modal");
+  servicesModal.classList.remove("is-open");
+  document.getElementById("open-services").classList.remove("nav-link-active");
+}
+
+function openServices() {
+  const servicesModal = document.getElementById("services-modal");
+  const isOpen = servicesModal.classList.contains("is-open");
+
+  closeMenu();
+  document.getElementById("quote-modal").classList.remove("is-open");
+
+  if (isOpen) {
+    closeServices();
+    return;
+  }
+
+  servicesModal.classList.add("is-open");
+  document.getElementById("open-services").classList.add("nav-link-active");
 }
 
 function openQuote(next, extra) {
   if (next !== undefined && next !== null && next !== "") vehicle = next;
   extras = extra ? [extra] : [];
   closeMenu();
-  document.getElementById("services-modal").classList.remove("is-open");
-  document.getElementById("open-services").classList.remove("nav-link-active");
+  closeServices();
   document.getElementById("quote-modal").classList.add("is-open");
   renderQuote();
 }
 
-function openServices() {
-  closeMenu();
-  document.getElementById("quote-modal").classList.remove("is-open");
-  document.getElementById("services-modal").classList.add("is-open");
-  document.getElementById("open-services").classList.add("nav-link-active");
-}
-
-function closeServices() {
-  document.getElementById("services-modal").classList.remove("is-open");
-  document.getElementById("open-services").classList.remove("nav-link-active");
-}
+const quoteModal = document.getElementById("quote-modal");
+const servicesModal = document.getElementById("services-modal");
 
 document.getElementById("wa-hello").href = wa(HELLO);
 document.getElementById("wa-phone").href = wa(HELLO);
@@ -137,33 +150,47 @@ document.body.addEventListener("click", (event) => {
     openQuote(quoted.dataset.quote);
     return;
   }
+
   const extra = event.target.closest("[data-extra]");
   if (extra && !event.target.closest("#quote-modal")) {
     openQuote(undefined, extra.dataset.extra);
     return;
   }
+
   const picked = event.target.closest("[data-vehicle]");
   if (picked) {
     vehicle = picked.dataset.vehicle;
     renderQuote();
     return;
   }
+
   const size = event.target.closest("[data-suv]");
   if (size) {
     suv = size.dataset.suv;
     renderQuote();
     return;
   }
+
   const toggle = event.target.closest("[data-toggle]");
   if (toggle) {
     const id = toggle.dataset.toggle;
     extras = extras.includes(id) ? extras.filter((item) => item !== id) : extras.concat(id);
     renderQuote();
+    return;
+  }
+
+  if (event.target.closest("[data-close]") || event.target.closest("[data-close-services]")) {
+    return;
+  }
+
+  if (event.target.closest(".overlay")) {
+    closeServices();
+    quoteModal.classList.remove("is-open");
   }
 });
 
 document.querySelectorAll("[data-close]").forEach((element) => {
-  element.addEventListener("click", () => document.getElementById("quote-modal").classList.remove("is-open"));
+  element.addEventListener("click", () => quoteModal.classList.remove("is-open"));
 });
 document.querySelectorAll("[data-close-services]").forEach((element) => {
   element.addEventListener("click", closeServices);
@@ -179,7 +206,7 @@ document.querySelectorAll("#mobile-nav a").forEach((link) => link.addEventListen
 document.addEventListener("keydown", (event) => {
   if (event.key !== "Escape") return;
   closeMenu();
-  document.getElementById("quote-modal").classList.remove("is-open");
+  quoteModal.classList.remove("is-open");
   closeServices();
 });
 
