@@ -97,6 +97,7 @@ function renderQuote() {
 
 function openMenu() {
   const nav = document.getElementById("mobile-nav");
+  nav.hidden = false;
   nav.classList.add("is-open");
   nav.setAttribute("aria-hidden", "false");
   document.getElementById("menu-btn").setAttribute("aria-expanded", "true");
@@ -104,6 +105,7 @@ function openMenu() {
 
 function closeMenu() {
   const nav = document.getElementById("mobile-nav");
+  nav.hidden = true;
   nav.classList.remove("is-open");
   nav.setAttribute("aria-hidden", "true");
   document.getElementById("menu-btn").setAttribute("aria-expanded", "false");
@@ -142,7 +144,6 @@ function openQuote(next, extra) {
 
 const quoteModal = document.getElementById("quote-modal");
 const servicesModal = document.getElementById("services-modal");
-
 const menuBtn = document.getElementById("menu-btn");
 
 menuBtn.addEventListener("click", () => {
@@ -152,6 +153,12 @@ menuBtn.addEventListener("click", () => {
     closeMenu();
   } else {
     openMenu();
+  }
+});
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth >= 1024) {
+    closeMenu();
   }
 });
 
