@@ -95,9 +95,17 @@ function renderQuote() {
   document.getElementById("wa-send").href = wa(quote.text);
 }
 
+function openMenu() {
+  const nav = document.getElementById("mobile-nav");
+  nav.classList.add("is-open");
+  nav.setAttribute("aria-hidden", "false");
+  document.getElementById("menu-btn").setAttribute("aria-expanded", "true");
+}
+
 function closeMenu() {
   const nav = document.getElementById("mobile-nav");
-  nav.hidden = true;
+  nav.classList.remove("is-open");
+  nav.setAttribute("aria-hidden", "true");
   document.getElementById("menu-btn").setAttribute("aria-expanded", "false");
 }
 
@@ -134,6 +142,28 @@ function openQuote(next, extra) {
 
 const quoteModal = document.getElementById("quote-modal");
 const servicesModal = document.getElementById("services-modal");
+
+const siteHeader = document.querySelector(".site-header");
+const menuBtn = document.getElementById("menu-btn");
+
+menuBtn.addEventListener("click", () => {
+  const nav = document.getElementById("mobile-nav");
+  const isOpen = nav.classList.contains("is-open");
+  if (isOpen) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
+});
+
+siteHeader.addEventListener("mouseenter", () => {
+  if (window.innerWidth < 1024) openMenu();
+});
+siteHeader.addEventListener("mouseleave", () => {
+  if (window.innerWidth < 1024) closeMenu();
+});
+
+document.querySelectorAll("#mobile-nav a").forEach((link) => link.addEventListener("click", closeMenu));
 
 document.getElementById("wa-hello").href = wa(HELLO);
 document.getElementById("wa-phone").href = wa(HELLO);
@@ -196,13 +226,6 @@ document.querySelectorAll("[data-close-services]").forEach((element) => {
   element.addEventListener("click", closeServices);
 });
 
-document.getElementById("menu-btn").addEventListener("click", () => {
-  const nav = document.getElementById("mobile-nav");
-  nav.hidden = !nav.hidden;
-  document.getElementById("menu-btn").setAttribute("aria-expanded", String(!nav.hidden));
-});
-document.querySelectorAll("#mobile-nav a").forEach((link) => link.addEventListener("click", closeMenu));
-
 document.addEventListener("keydown", (event) => {
   if (event.key !== "Escape") return;
   closeMenu();
@@ -240,6 +263,7 @@ function tick() {
   document.querySelectorAll("[data-open]").forEach((element) => element.classList.toggle("open-yes", open));
 }
 
+closeMenu();
 tick();
 setInterval(tick, 60000);
 renderQuote();
