@@ -9,10 +9,10 @@ const VEHICLES = [
 ];
 
 const EXTRAS = [
-  { id: "encerado", name: "Encerado", price: 50 },
-  { id: "motor", name: "Limpieza de motor", price: 80 },
-  { id: "interiores", name: "Limpieza de interiores", price: 60 },
-  { id: "faros", name: "Pulido de faros", price: 50 },
+  { id: "encerado", name: "Encerado", price: 150 },
+  { id: "motor", name: "Limpieza de motor", price: 180 },
+  { id: "interiores", name: "Limpieza de interiores", price: 160 },
+  { id: "faros", name: "Pulido de faros", price: 150 },
 ];
 
 const ICONS = {
@@ -79,7 +79,7 @@ function quoteText() {
 function renderQuote() {
   document.getElementById("vehicle-choices").innerHTML = VEHICLES.map(
     (item) =>
-      `<button type="button" class="choice\( {vehicle === item.id ? " choice-on" : ""}" data-vehicle=" \){item.id}">\( {ICONS[item.id]}<span> \){item.name}</span><strong>${item.label}</strong></button>`,
+      `<button type="button" class="choice${vehicle === item.id ? " choice-on" : ""}" data-vehicle="${item.id}">${ICONS[item.id]}<span>${item.name}</span><strong>${item.label}</strong></button>`
   ).join("");
   document.getElementById("suv-row").hidden = vehicle !== "camioneta";
   document.querySelectorAll("[data-suv]").forEach((button) => {
@@ -88,7 +88,7 @@ function renderQuote() {
   document.getElementById("pack-price").textContent = money(vehiclePrice());
   document.getElementById("extra-choices").innerHTML = EXTRAS.map(
     (item) =>
-      `<li><button type="button" class="extra-row\( {extras.includes(item.id) ? " extra-on" : ""}" data-toggle=" \){item.id}">\( {ICONS.check}<span> \){item.name}</span><strong>${money(item.price)}</strong></button></li>`,
+      `<li><button type="button" class="extra-row${extras.includes(item.id) ? " extra-on" : ""}" data-toggle="${item.id}">${ICONS.check}<span>${item.name}</span><strong>${money(item.price)}</strong></button></li>`
   ).join("");
   const quote = quoteText();
   document.getElementById("total").textContent = money(quote.total);
@@ -101,7 +101,7 @@ function closeMenu() {
 }
 
 function openQuote(next, extra) {
-  if (next) vehicle = next;
+  if (next !== undefined && next !== null && next !== "") vehicle = next;
   extras = extra ? [extra] : [];
   closeMenu();
   document.getElementById("services-modal").classList.remove("is-open");
