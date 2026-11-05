@@ -10,6 +10,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="estilos.css" />
+  <style>
+    .faq-list { display: grid; gap: .75rem; margin-top: 1.5rem; }
+    .faq-item { padding: 1rem 1.15rem; border: 1px solid var(--color-line); border-radius: .85rem; background: #fff; box-shadow: var(--shadow-card); }
+    .faq-item summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; color: var(--color-night); font-weight: 800; cursor: pointer; list-style: none; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "+"; color: var(--color-accent); font-size: 1.4rem; line-height: 1; }
+    .faq-item[open] summary::after { content: "−"; }
+    .faq-item p { margin-top: .75rem; color: var(--color-mist); }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -23,6 +32,7 @@
         <button type="button" class="nav-link" id="open-services">Servicios</button>
         <a href="#paquetes" class="nav-link" data-spy="paquetes">Paquetes</a>
         <a href="#cotizador" class="nav-link" data-spy="cotizador">Cotizador</a>
+        <a href="#preguntas-frecuentes" class="nav-link">Preguntas frecuentes</a>
         <a href="#ubicacion" class="nav-link" data-spy="ubicacion">Ubicación</a>
         <a href="#contacto" class="nav-link" data-spy="contacto">Contacto</a>
       </nav>
@@ -34,7 +44,7 @@
     </div>
     <div class="wrap mobile-nav" id="mobile-nav" hidden>
       <button type="button" class="nav-link" id="open-services-m">Servicios</button>
-      <a href="#inicio" class="nav-link">Inicio</a><a href="#paquetes" class="nav-link">Paquetes</a><a href="#cotizador" class="nav-link">Cotizador</a><a href="#ubicacion" class="nav-link">Ubicación</a><a href="#contacto" class="nav-link">Contacto</a>
+      <a href="#inicio" class="nav-link">Inicio</a><a href="#paquetes" class="nav-link">Paquetes</a><a href="#cotizador" class="nav-link">Cotizador</a><a href="#preguntas-frecuentes" class="nav-link">Preguntas frecuentes</a><a href="#ubicacion" class="nav-link">Ubicación</a><a href="#contacto" class="nav-link">Contacto</a>
       <p class="status-line"><span class="dot" data-dot></span><span data-status>Hoy</span> · 9:00 am – 5:00 pm</p>
     </div>
   </header>
@@ -61,6 +71,17 @@
     <section id="cotizador" class="band"><div class="wrap why"><div>
       <h2 class="section-title">¿Por qué elegir<br/>Auto Lavado HMTZL?</h2><div class="reason-grid"><p class="reason">Recogemos y regresamos tu vehículo</p><p class="reason">Productos de alta calidad</p><p class="reason">Cuidado de pintura y acabados</p><p class="reason">Atención personalizada</p></div><p class="hands">Tu vehículo en buenas manos.</p>
     </div><div class="quote-card"><h3>Cotiza en segundos</h3><p>Selecciona tu vehículo y los servicios adicionales. Enviamos tu cotización directamente por WhatsApp.</p><button type="button" class="btn btn-primary" id="open-quote">Abrir cotizador</button><div class="vehicle-picks"><button type="button" class="pick" data-quote="auto">Auto</button><button type="button" class="pick" data-quote="camioneta">Camioneta</button><button type="button" class="pick" data-quote="camion">Camión</button><button type="button" class="pick" data-quote="moto">Moto</button></div></div></div></section>
+    <section id="preguntas-frecuentes" class="band"><div class="wrap">
+      <p class="eyebrow">Resolvemos tus dudas</p><h2 class="section-title">Preguntas frecuentes</h2><p class="lede">Conoce cómo funciona nuestro servicio de recogida, lavado y entrega.</p><div class="accent-bar"></div>
+      <div class="faq-list">
+        <details class="faq-item"><summary>¿Cómo funciona el servicio?</summary><p>Coordinamos contigo por WhatsApp, recogemos tu vehículo en tu domicilio, realizamos el lavado y te lo regresamos limpio.</p></details>
+        <details class="faq-item"><summary>¿En qué zonas ofrecen recogida y entrega?</summary><p>Atendemos en Ario de Rosales, Colonia Obrera. Escríbenos para confirmar si llegamos a tu domicilio.</p></details>
+        <details class="faq-item"><summary>¿Cómo puedo pedir el servicio?</summary><p>Elige tu vehículo y los servicios adicionales en el cotizador, y envíanos la cotización por WhatsApp para coordinar.</p></details>
+        <details class="faq-item"><summary>¿Cuánto cuesta el lavado?</summary><p>El lavado normal cuesta $120 para auto, $150–$180 para camioneta, $350 para camión y $80 para moto. Los servicios adicionales tienen costo aparte.</p></details>
+        <details class="faq-item"><summary>¿Cuándo y cómo pago?</summary><p>Al escribirnos confirmamos contigo el precio final y la forma de pago antes de coordinar el servicio.</p></details>
+        <details class="faq-item"><summary>¿Cuánto tiempo tarda el servicio?</summary><p>El tiempo puede variar según el vehículo y los servicios elegidos. Escríbenos para consultar la disponibilidad y el tiempo estimado.</p></details>
+      </div>
+    </div></section>
     <section id="ubicacion" class="band"><div class="wrap visit">
       <div><h2>Servicio en</h2><p class="address">Ario de Rosales, Colonia Obrera. Pregunta por cobertura para recoger y regresar tu vehículo.</p><a class="btn btn-quiet" href="https://www.google.com/maps/search/?api=1&amp;query=Colonia+Obrera+Ario+de+Rosales+Michoacan+campo+de+futbol" target="_blank" rel="noreferrer">Ver en Google Maps</a></div>
       <a class="shot" href="https://www.google.com/maps/search/?api=1&amp;query=Colonia+Obrera+Ario+de+Rosales+Michoacan+campo+de+futbol" target="_blank" rel="noreferrer"><span class="shot-caption">HMTZL · Ario de Rosales</span></a>
