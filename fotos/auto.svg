@@ -1,27 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-labelledby="title desc">
-  <title id="title">Auto</title>
-  <desc id="desc">Ilustración genérica de un auto para el sitio de lavado.</desc>
+  <title id="title">Auto limpio</title>
+  <desc id="desc">Ilustración moderna de un automóvil azul brillante, con reflejos y gotas de agua.</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#dfeeff"/>
-      <stop offset="100%" stop-color="#eef7ff"/>
-    </linearGradient>
-    <linearGradient id="body" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#1473e6"/>
-      <stop offset="100%" stop-color="#5aa6ff"/>
-    </linearGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e8f7ff"/><stop offset="1" stop-color="#c6e8ff"/></linearGradient>
+    <linearGradient id="paint" x1="0" y1="0" x2="0.9" y2="1"><stop stop-color="#55c4ff"/><stop offset=".52" stop-color="#1685e8"/><stop offset="1" stop-color="#0753ad"/></linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e9fbff"/><stop offset="1" stop-color="#8bc9e9"/></linearGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".8"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <filter id="shadow" x="-.2" y="-.5" width="1.4" height="2"><feGaussianBlur stdDeviation="14"/></filter>
   </defs>
-  <rect width="800" height="520" fill="url(#bg)"/>
-  <circle cx="140" cy="390" r="54" fill="#cfe5ff"/>
-  <circle cx="660" cy="390" r="54" fill="#cfe5ff"/>
-  <path d="M150 340h420c44 0 76 22 96 60l32 52H120l30-52c16-26 40-60 84-60z" fill="url(#body)"/>
-  <path d="M260 250h200l60 90H190l70-90z" fill="#dff2ff" opacity="0.65"/>
-  <rect x="250" y="230" width="220" height="82" rx="22" fill="#0d2d4f" opacity="0.14"/>
-  <rect x="270" y="245" width="180" height="48" rx="12" fill="#eff9ff" opacity="0.9"/>
-  <circle cx="210" cy="390" r="62" fill="#0f243c"/>
-  <circle cx="210" cy="390" r="28" fill="#cfe3ff"/>
-  <circle cx="590" cy="390" r="62" fill="#0f243c"/>
-  <circle cx="590" cy="390" r="28" fill="#cfe3ff"/>
-  <path d="M108 340h58l20-46h70l30 46h-70" fill="none" stroke="#0d2d4f" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" opacity="0.22"/>
-  <text x="400" y="490" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700" fill="#123b5d">AUTO</text>
+  <rect width="800" height="520" rx="34" fill="url(#sky)"/>
+  <circle cx="650" cy="115" r="58" fill="#fff" opacity=".55"/>
+  <path d="M0 370c122-52 220-29 332 2s252 42 468-26v174H0z" fill="#fff" opacity=".42"/>
+  <ellipse cx="405" cy="424" rx="276" ry="25" fill="#174d78" opacity=".18" filter="url(#shadow)"/>
+  <g fill="#fff" opacity=".75"><path d="M114 170c-7 12-15 24-15 32a15 15 0 0 0 30 0c0-8-8-20-15-32z"/><path d="M682 246c-6 10-12 20-12 27a12 12 0 0 0 24 0c0-7-6-17-12-27z"/><path d="M194 110c-5 8-10 16-10 22a10 10 0 0 0 20 0c0-6-5-14-10-22z"/></g>
+  <g transform="translate(0 8)">
+    <path d="m155 337 31-79c13-34 40-57 77-68l87-25c23-7 47-10 71-10h76c36 0 66 13 92 39l56 57 47 17c24 9 39 29 39 54v49H139v-16c0-9 6-16 16-18z" fill="url(#paint)" stroke="#0753ad" stroke-width="7" stroke-linejoin="round"/>
+    <path d="m275 258 26-55 54-17 84-17v89z" fill="url(#glass)" stroke="#d8f5ff" stroke-width="8" stroke-linejoin="round"/>
+    <path d="m454 186 44 2c23 1 43 10 60 27l41 43H454z" fill="url(#glass)" stroke="#d8f5ff" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M447 188v72" stroke="#d5f3ff" stroke-width="7"/>
+    <path d="M202 277h384" stroke="#8edcff" stroke-width="5" stroke-linecap="round" opacity=".8"/>
+    <path d="m164 333 35-5m438 4 43 5" stroke="#e9fbff" stroke-width="12" stroke-linecap="round"/>
+    <path d="m158 349 55-2m410 0 80 4" stroke="#063b7c" stroke-width="9" stroke-linecap="round"/>
+    <path d="M319 307h136" stroke="url(#shine)" stroke-width="10" stroke-linecap="round" opacity=".8"/>
+    <circle cx="258" cy="365" r="53" fill="#172b3b"/><circle cx="258" cy="365" r="33" fill="#d9f3ff"/><circle cx="258" cy="365" r="20" fill="#73aeca"/><circle cx="258" cy="365" r="8" fill="#eafaff"/>
+    <circle cx="596" cy="365" r="53" fill="#172b3b"/><circle cx="596" cy="365" r="33" fill="#d9f3ff"/><circle cx="596" cy="365" r="20" fill="#73aeca"/><circle cx="596" cy="365" r="8" fill="#eafaff"/>
+    <path d="M150 322h43" stroke="#fff6cf" stroke-width="12" stroke-linecap="round"/><path d="M675 322h31" stroke="#ff8585" stroke-width="10" stroke-linecap="round"/>
+  </g>
+  <g fill="#fff" opacity=".85"><circle cx="115" cy="300" r="5"/><circle cx="682" cy="156" r="7"/><circle cx="628" cy="308" r="4"/><circle cx="232" cy="155" r="5"/></g>
 </svg>

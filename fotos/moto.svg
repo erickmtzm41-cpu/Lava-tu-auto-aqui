@@ -1,26 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-labelledby="title desc">
-  <title id="title">Moto</title>
-  <desc id="desc">Ilustración genérica de una motocicleta para el sitio de lavado.</desc>
+  <title id="title">Motocicleta limpia</title>
+  <desc id="desc">Ilustración moderna de una motocicleta deportiva roja con detalles cromados.</desc>
   <defs>
-    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#fcf0d8"/>
-      <stop offset="100%" stop-color="#fff8ea"/>
-    </linearGradient>
-    <linearGradient id="bikeBody" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#ff7b54"/>
-      <stop offset="100%" stop-color="#ffb199"/>
-    </linearGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff0e8"/><stop offset="1" stop-color="#ffe0d2"/></linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff946f"/><stop offset=".55" stop-color="#f05245"/><stop offset="1" stop-color="#b92735"/></linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f8fdff"/><stop offset="1" stop-color="#9ab4c2"/></linearGradient>
+    <filter id="shadow" x="-.2" y="-.5" width="1.4" height="2"><feGaussianBlur stdDeviation="13"/></filter>
   </defs>
-  <rect width="800" height="520" fill="url(#bg2)"/>
-  <circle cx="210" cy="390" r="70" fill="#f5d8b6"/>
-  <circle cx="610" cy="390" r="70" fill="#f5d8b6"/>
-  <circle cx="210" cy="390" r="30" fill="#1e2a39"/>
-  <circle cx="610" cy="390" r="30" fill="#1e2a39"/>
-  <path d="M210 390l120-145h150l52 80H586l-30 56H210z" fill="url(#bikeBody)" opacity="0.95"/>
-  <path d="M318 250l90 140h-132l42-140z" fill="#fff7ed" opacity="0.75"/>
-  <path d="M245 392h170" stroke="#1b2d42" stroke-width="14" stroke-linecap="round"/>
-  <path d="M365 392l90-132" stroke="#1b2d42" stroke-width="14" stroke-linecap="round"/>
-  <path d="M450 260l95 132" stroke="#1b2d42" stroke-width="14" stroke-linecap="round"/>
-  <path d="M282 230l72-64h82l62 64" fill="none" stroke="#1b2d42" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="400" y="490" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700" fill="#3b2b1f">MOTO</text>
+  <rect width="800" height="520" rx="34" fill="url(#bg)"/>
+  <circle cx="640" cy="120" r="72" fill="#fff" opacity=".5"/>
+  <path d="M0 383c158-44 245-6 365 13 161 25 275-7 435-42v166H0z" fill="#fff" opacity=".5"/>
+  <ellipse cx="405" cy="422" rx="246" ry="22" fill="#773f40" opacity=".17" filter="url(#shadow)"/>
+  <g transform="translate(0 3)" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="229" cy="361" r="75" fill="#1d2b37"/><circle cx="229" cy="361" r="52" fill="url(#metal)" stroke="#526a78" stroke-width="7"/><circle cx="229" cy="361" r="13" fill="#718d9c" stroke="#fff" stroke-width="5"/>
+    <circle cx="580" cy="361" r="75" fill="#1d2b37"/><circle cx="580" cy="361" r="52" fill="url(#metal)" stroke="#526a78" stroke-width="7"/><circle cx="580" cy="361" r="13" fill="#718d9c" stroke="#fff" stroke-width="5"/>
+    <path d="m229 361 126-102 75 102H229l93-126m108 126 86-124 64 124" fill="none" stroke="#263e4d" stroke-width="17"/>
+    <path d="m347 258 42-61h99l53 62-85 29-78-7z" fill="url(#body)" stroke="#b92c37" stroke-width="7"/>
+    <path d="m369 240 34-48h76l30 40-67 13z" fill="#bfe9f3" stroke="#f7ffff" stroke-width="7"/>
+    <path d="M391 183h102l27 17" fill="none" stroke="#263e4d" stroke-width="12"/>
+    <path d="m473 293 58 2 20 17h-81" fill="#263e4d" stroke="#263e4d" stroke-width="7"/>
+    <path d="m526 238 56-13 25 10m-48-8-10-31h-30" fill="none" stroke="#263e4d" stroke-width="12"/>
+    <path d="m566 225 33-10" stroke="#f4fbff" stroke-width="7"/>
+    <path d="M194 283h-32l-29 18m37-18 25-32h77" fill="none" stroke="#263e4d" stroke-width="12"/>
+    <path d="m158 302 22 3" stroke="#fff" stroke-width="7"/>
+    <path d="m350 260-35 33 53 24 42-25" fill="#f65c4e" stroke="#c6333e" stroke-width="7"/>
+    <path d="m400 317 32 0" stroke="#7b8d95" stroke-width="15"/>
+    <path d="m271 294 50 0m-27 21 55 0" stroke="#f9fcff" stroke-width="8" opacity=".85"/>
+  </g>
+  <g fill="#fff" opacity=".8"><path d="M126 160c-7 11-13 21-13 28a13 13 0 0 0 26 0c0-7-6-17-13-28z"/><circle cx="690" cy="294" r="5"/><circle cx="646" cy="190" r="7"/><circle cx="246" cy="124" r="4"/></g>
 </svg>
