@@ -1,21 +1,41 @@
-# Security Policy
+# Política de seguridad
 
-## Supported Versions
+## Alcance
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+Este repositorio sirve como sitio web estático para promocionar y cotizar servicios de lavado de autos para HMTZL. Agradecemos los reportes responsables de vulnerabilidades en el sitio, sus scripts y la automatización asociada.
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+## Cómo reportar una vulnerabilidad
 
-## Reporting a Vulnerability
+Por favor, reporta cualquier problema de seguridad de forma privada usando la opción de GitHub Security Advisories:
 
-Use this section to tell people how to report a vulnerability.
+https://github.com/erickmtzm41-cpu/Lava-tu-auto-aqui/security/advisories/new
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+No publiques detalles de vulnerabilidades en issues, pull requests, foros públicos, redes sociales, chats o correos abiertos antes de que se confirme y corrija el problema.
+
+Incluye, si es posible:
+- descripción del problema y su impacto potencial;
+- pasos de reproducción o evidencia mínima;
+- URL, rutas o archivos afectados;
+- navegador, entorno o versión implicados;
+- una sugerencia de mitigación.
+
+No realices pruebas que afecten a terceros, interrumpan el servicio o accedan a información ajena.
+
+## Qué esperar
+
+- Confirmación de recepción en un plazo razonable.
+- Evaluación del impacto y prioridad.
+- Coordinación para corregir el problema y publicar una solución segura.
+- Comunicación clara si el reporte queda fuera del alcance o requiere más información.
+
+## Versiones
+
+La rama principal del repositorio se considera la versión mantenida. Las correcciones de seguridad se priorizan para esa versión. No se garantiza soporte para ramas antiguas, forks o copias no oficiales.
+
+## Áreas de interés
+
+Se consideran relevantes:
+- HTML, CSS y JavaScript del sitio;
+- generación y envío de cotizaciones por WhatsApp;
+- enlaces externos o recursos embebidos;
+- dependencias, secretos, permisos y flujos de automatización.
