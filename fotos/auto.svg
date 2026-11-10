@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-labelledby="title desc">
+  <title id="title">Auto</title>
+  <desc id="desc">Ilustración genérica de un auto para el sitio de lavado.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#dfeeff"/>
+      <stop offset="100%" stop-color="#eef7ff"/>
+    </linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1473e6"/>
+      <stop offset="100%" stop-color="#5aa6ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="520" fill="url(#bg)"/>
+  <circle cx="140" cy="390" r="54" fill="#cfe5ff"/>
+  <circle cx="660" cy="390" r="54" fill="#cfe5ff"/>
+  <path d="M150 340h420c44 0 76 22 96 60l32 52H120l30-52c16-26 40-60 84-60z" fill="url(#body)"/>
+  <path d="M260 250h200l60 90H190l70-90z" fill="#dff2ff" opacity="0.65"/>
+  <rect x="250" y="230" width="220" height="82" rx="22" fill="#0d2d4f" opacity="0.14"/>
+  <rect x="270" y="245" width="180" height="48" rx="12" fill="#eff9ff" opacity="0.9"/>
+  <circle cx="210" cy="390" r="62" fill="#0f243c"/>
+  <circle cx="210" cy="390" r="28" fill="#cfe3ff"/>
+  <circle cx="590" cy="390" r="62" fill="#0f243c"/>
+  <circle cx="590" cy="390" r="28" fill="#cfe3ff"/>
+  <path d="M108 340h58l20-46h70l30 46h-70" fill="none" stroke="#0d2d4f" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" opacity="0.22"/>
+  <text x="400" y="490" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700" fill="#123b5d">AUTO</text>
+</svg>
