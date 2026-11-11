@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://erickmtzm41-cpu.github.io/Lava-tu-auto-aqui/sitemap.xml
