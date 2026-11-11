@@ -1,50 +1,52 @@
 # HMTZL Auto Lavado
 
-Sitio web de promoción y cotización del servicio de lavado de autos HMTZL, en Ario de Rosales.
+Sitio web estático de promoción y cotización de Auto Lavado HMTZL, en Ario de Rosales, Michoacán.
 
-## Descripción
+## Qué incluye
 
-Este proyecto es una landing page estática que permite:
-- presentar servicios y paquetes;
-- mostrar información de contacto y ubicación;
-- generar cotizaciones con WhatsApp;
-- ofrecer una experiencia rápida y móvil.
+- Presentación de servicios y paquetes.
+- Información de contacto y ubicación.
+- Cotizador interactivo que prepara la solicitud en WhatsApp.
+- Diseño adaptable a móviles y escritorio.
+- Metadatos SEO, datos estructurados, archivo robots.txt y mapa del sitio sitemap.xml.
 
-## Estructura del repositorio
+## Estructura
 
-- `index.html` — contenido principal del sitio.
-- `estilos.css` — estilos visuales y responsive.
-- `app.js` — lógica de cotizador, navegación y WhatsApp.
-- `fotos/` — ilustraciones locales usadas por la página.
-- `README.md` — documentación del proyecto.
-- `SECURITY.md` — política de vulnerabilidades.
+- index.html: contenido y estructura del sitio.
+- estilos.css: diseño visual y adaptación responsive.
+- app.js: cotizador, navegación y enlaces de WhatsApp.
+- fotos/: ilustraciones SVG utilizadas en la página.
+- robots.txt: indicaciones para rastreadores.
+- sitemap.xml: URL pública del sitio para buscadores.
+- .github/workflows/static.yml: publicación automática en GitHub Pages.
+- .github/workflows/codeql.yml: análisis de seguridad de GitHub Actions y JavaScript.
 
-## Cómo abrir el proyecto
+## Publicación
 
-Puedes abrir el archivo `index.html` directamente en tu navegador o usar un servidor local sencillo como:
+La página se publica desde la rama Principal mediante GitHub Actions.
+
+Sitio: https://erickmtzm41-cpu.github.io/Lava-tu-auto-aqui/
+
+## Prueba local
+
+Desde la carpeta del proyecto, ejecuta:
 
 ```bash
 python -m http.server 8000
 ```
 
-Luego entra a:
-
-```text
-http://localhost:8000
-```
+Después abre http://localhost:8000
 
 ## Requisitos
 
 - Navegador moderno.
-- Conexión a internet para cargar la fuente de Google Fonts y la imagen de fondo principal.
+- Conexión a internet para cargar Google Fonts y la imagen externa del encabezado.
 
-## Personalización
+## Mantenimiento
 
-Para cambiar:
-- precios y servicios: edita `app.js` y el contenido del modal/cotizador en `index.html`;
-- colores y estilo: modifica variables en `estilos.css`;
-- textos y mensajes: actualiza el contenido en `index.html`.
+- Precios y lógica del cotizador: app.js y el contenido correspondiente en index.html.
+- Textos y estructura: index.html.
+- Estilos y diseño responsive: estilos.css.
+- Rastreadores e indexación: robots.txt y sitemap.xml.
 
-## Créditos
-
-Proyecto desarrollado para HMTZL.
+Proyecto de Auto Lavado HMTZL.
