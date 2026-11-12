@@ -274,3 +274,34 @@ h1, h2, h3, p, ul { margin: 0; }
 @media (max-width: 600px) {
   .work-grid { grid-template-columns: 1fr; }
 }
+
+
+/* Identidad HMTZL: tipografía de carácter y evolución hacia detailing */
+.logo-word.metal {
+  font-family: "Barlow Condensed", var(--font-sans);
+  font-size: 1.55rem;
+  font-weight: 900;
+  letter-spacing: .09em;
+  line-height: .95;
+}
+.hero-mark {
+  font-family: "Barlow Condensed", var(--font-sans);
+  font-weight: 900;
+  letter-spacing: .035em;
+  text-transform: uppercase;
+  color: #f8fbff;
+  text-shadow: 0 3px 0 rgb(7 20 34 / .45), 0 10px 30px rgb(0 0 0 / .28);
+}
+.hero-evolution {
+  display: inline-block;
+  margin-top: .65rem;
+  padding: .35rem .65rem;
+  border-left: 3px solid #58adff;
+  background: rgb(7 24 42 / .48);
+  color: #c5e4ff;
+  font-size: clamp(.66rem, 1.6vw, .82rem);
+  font-weight: 800;
+  letter-spacing: .13em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
