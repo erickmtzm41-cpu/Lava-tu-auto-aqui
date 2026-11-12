@@ -444,3 +444,32 @@ h1, h2, h3, p, ul { margin: 0; }
   .hero-mark, .hero-mark::after, .hero::after, .quote-card::before, .quote-card::after,
   .quote-card .btn-primary, #open-quote { animation: none !important; }
 }
+
+
+/* Emblema HMTZL inspirado en el lenguaje de lavado: azul y destellos de agua */
+.logo { min-width: 7.2rem; gap: .02rem; }
+.logo-emblem { width: 3.45rem; height: 2rem; overflow: visible; }
+.logo-word.metal {
+  font-family: "Barlow Condensed", var(--font-sans);
+  font-size: 1.7rem;
+  font-weight: 900;
+  letter-spacing: .055em;
+  line-height: .88;
+  color: #1473e6;
+  background: linear-gradient(180deg, #42a5ff 0%, #1473e6 58%, #0c4e9f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 0 rgb(9 26 43 / .14));
+}
+.logo-sub {
+  color: #1473e6;
+  font-size: .55rem;
+  letter-spacing: .19em;
+}
+.faq-item { transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease; }
+.faq-item:hover, .faq-item[open] {
+  border-color: #a9d2ff;
+  box-shadow: 0 12px 28px rgb(20 115 230 / .09);
+}
+.faq-item[open] summary { color: var(--color-accent); }
