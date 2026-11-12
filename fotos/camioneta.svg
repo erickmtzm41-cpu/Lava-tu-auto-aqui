@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-labelledby="t d">
+<title id="t">Camioneta SUV azul metálica HMTZL</title><desc id="d">Camioneta SUV azul metálica con iluminación de estudio y reflejos sobre suelo húmedo.</desc>
+<defs>
+ <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#102b47"/><stop offset="1" stop-color="#071421"/></linearGradient>
+ <radialGradient id="halo"><stop stop-color="#2b75b5" stop-opacity=".45"/><stop offset="1" stop-color="#10243a" stop-opacity="0"/></radialGradient>
+ <linearGradient id="paint" x1="0" y1="0" x2=".2" y2="1"><stop stop-color="#a9dfff"/><stop offset=".18" stop-color="#328fd1"/><stop offset=".55" stop-color="#1260a2"/><stop offset=".82" stop-color="#0b3157"/><stop offset="1" stop-color="#061b31"/></linearGradient>
+ <linearGradient id="glass" x2=".8" y2="1"><stop stop-color="#bfeaff"/><stop offset=".4" stop-color="#244b6a"/><stop offset="1" stop-color="#0a1d30"/></linearGradient>
+ <linearGradient id="floor" x2="0" y2="1"><stop stop-color="#173a58" stop-opacity=".05"/><stop offset="1" stop-color="#4da5e8" stop-opacity=".25"/></linearGradient>
+ <filter id="blur"><feGaussianBlur stdDeviation="18"/></filter>
+</defs>
+<rect width="900" height="560" fill="url(#bg)"/><ellipse cx="470" cy="300" rx="400" ry="235" fill="url(#halo)"/>
+<path d="M0 420 Q220 390 450 420 T900 410 V560 H0Z" fill="url(#floor)"/>
+<path d="M95 446H810" stroke="#5db8f5" stroke-opacity=".18" stroke-width="2"/>
+<ellipse cx="460" cy="442" rx="320" ry="34" fill="#000" opacity=".6" filter="url(#blur)"/>
+<g transform="translate(0 5)">
+ <path d="M120 370 160 345 213 326 284 255Q309 222 366 211L526 198Q600 185 650 226L735 300 777 328Q804 339 807 368L802 397H103L108 383Q110 374 120 370Z" fill="url(#paint)" stroke="#79caff" stroke-opacity=".72" stroke-width="4"/>
+ <path d="m294 258 53-40q18-13 43-14l126-4q34 0 58 22l57 54-337-1Z" fill="url(#glass)" stroke="#a9dcfa" stroke-width="4"/>
+ <path d="m473 201-2 75m-123-57-32 56" stroke="#c5eaff" stroke-opacity=".55" stroke-width="4"/>
+ <path d="M290 280h346" stroke="#d9f3ff" stroke-opacity=".42" stroke-width="3"/>
+ <path d="m132 357 76-8m505 4 65 12" stroke="#e7f7ff" stroke-width="9" stroke-linecap="round"/>
+ <path d="M113 386h690" stroke="#071522" stroke-width="13"/>
+ <path d="M340 333h225" stroke="#d9efff" stroke-opacity=".45" stroke-width="3"/>
+ <path d="M165 397h620" stroke="#6cc5ff" stroke-opacity=".5" stroke-width="2"/>
+ <circle cx="260" cy="389" r="58" fill="#06101a" stroke="#7aa6c5" stroke-width="5"/><circle cx="260" cy="389" r="38" fill="#142c40" stroke="#d0e8f7" stroke-width="5"/><circle cx="260" cy="389" r="13" fill="#83b9d8"/><path d="M260 353v72m-36-36h72m-61-25 50 50m0-50-50 50" stroke="#9fc9e1" stroke-width="4"/>
+ <circle cx="680" cy="389" r="58" fill="#06101a" stroke="#7aa6c5" stroke-width="5"/><circle cx="680" cy="389" r="38" fill="#142c40" stroke="#d0e8f7" stroke-width="5"/><circle cx="680" cy="389" r="13" fill="#83b9d8"/><path d="M680 353v72m-36-36h72m-61-25 50 50m0-50-50 50" stroke="#9fc9e1" stroke-width="4"/>
+ <path d="M115 361h53" stroke="#fff4d1" stroke-width="11" stroke-linecap="round"/><path d="M763 357h35" stroke="#ff6574" stroke-width="9" stroke-linecap="round"/>
+</g>
+<g fill="#9bd8ff" opacity=".55"><circle cx="130" cy="150" r="2"/><circle cx="760" cy="180" r="3"/><circle cx="680" cy="100" r="2"/></g>
+</svg>
