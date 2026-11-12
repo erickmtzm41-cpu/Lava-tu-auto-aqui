@@ -239,3 +239,38 @@ h1, h2, h3, p, ul { margin: 0; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+
+/* Galería de trabajos reales HMTZL */
+.work-item {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--color-line);
+  border-radius: .8rem;
+  background: #fff;
+  box-shadow: var(--shadow-card);
+}
+.work-item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.work-item figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  padding: .75rem;
+}
+.work-item figcaption strong {
+  color: var(--color-night);
+  font-size: .85rem;
+}
+.work-item figcaption span {
+  color: var(--color-mist);
+  font-size: .75rem;
+}
+@media (max-width: 600px) {
+  .work-grid { grid-template-columns: 1fr; }
+}
