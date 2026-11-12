@@ -473,3 +473,16 @@ h1, h2, h3, p, ul { margin: 0; }
   box-shadow: 0 12px 28px rgb(20 115 230 / .09);
 }
 .faq-item[open] summary { color: var(--color-accent); }
+
+
+/* Galería de vehículos: presentación uniforme, sobria y premium */
+.package-card { overflow: hidden; border-color: #d4e3ef; background: #fff; }
+.package-card img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  background: #10243a;
+  transition: transform .45s cubic-bezier(.2,.8,.2,1), filter .35s ease;
+}
+.package-card:hover img { transform: scale(1.035); filter: saturate(1.08) contrast(1.03); }
+.package-meta { padding: .95rem .7rem .75rem; }
+.package-price { color: #1269c4; }
