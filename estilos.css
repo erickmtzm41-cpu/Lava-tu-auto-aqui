@@ -305,3 +305,142 @@ h1, h2, h3, p, ul { margin: 0; }
   line-height: 1.5;
   text-transform: uppercase;
 }
+
+
+/* Impacto visual: HMTZL protagonista + cotizador con movimiento de agua */
+.hero-mark {
+  position: relative;
+  display: inline-block;
+  margin-top: .7rem;
+  font-size: clamp(5.2rem, 17vw, 9.6rem);
+  font-weight: 900;
+  line-height: .82;
+  letter-spacing: .015em;
+  background: linear-gradient(180deg, #ffffff 5%, #d8edff 35%, #78baff 58%, #ffffff 76%, #8eb8df 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 3px 0 rgb(4 18 33 / .65)) drop-shadow(0 9px 18px rgb(0 0 0 / .48));
+  animation: brand-arrive .95s cubic-bezier(.16,1,.3,1) both;
+}
+.hero-mark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 25%, rgb(255 255 255 / .75) 48%, transparent 68%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: brand-glint 5.5s ease-in-out 1.2s infinite;
+  pointer-events: none;
+}
+@keyframes brand-arrive {
+  from { opacity: 0; transform: translateY(16px) scale(.94); filter: blur(5px); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes brand-glint {
+  0%, 65%, 100% { background-position: 120% 0; }
+  82% { background-position: -120% 0; }
+}
+.hero-evolution {
+  margin-top: .9rem;
+  box-shadow: 0 7px 24px rgb(0 0 0 / .22);
+}
+.hero-copy { width: min(49rem, 100%); }
+.hero-shade {
+  background:
+    radial-gradient(ellipse at 18% 48%, rgb(20 115 230 / .22), transparent 48%),
+    linear-gradient(90deg, rgb(5 17 31 / .94), rgb(8 25 43 / .66) 58%, rgb(8 25 43 / .18)),
+    linear-gradient(0deg, rgb(8 25 43 / .38), transparent);
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .38;
+  background-image:
+    radial-gradient(circle at 12% 22%, rgb(255 255 255 / .65) 0 2px, transparent 3px),
+    radial-gradient(circle at 72% 18%, rgb(143 201 255 / .65) 0 4px, transparent 5px),
+    radial-gradient(circle at 84% 68%, rgb(255 255 255 / .5) 0 2px, transparent 3px),
+    radial-gradient(circle at 55% 82%, rgb(143 201 255 / .55) 0 3px, transparent 4px);
+  background-size: 190px 210px, 260px 240px, 230px 190px, 300px 270px;
+  animation: water-drift 18s linear infinite;
+}
+@keyframes water-drift {
+  from { background-position: 0 0, 0 0, 0 0, 0 0; }
+  to { background-position: 80px -130px, -100px -160px, 120px -110px, -80px -140px; }
+}
+
+/* Cotizador: tarjeta y llamada a la acción claramente visibles */
+.quote-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(1.35rem, 3vw, 2rem);
+  border: 1px solid #b8d9fa;
+  background:
+    radial-gradient(circle at 92% 8%, rgb(66 165 255 / .18), transparent 34%),
+    linear-gradient(145deg, #f8fbff, #eaf4ff 62%, #ffffff);
+  box-shadow: 0 20px 48px rgb(16 68 120 / .15), inset 0 1px 0 #fff;
+}
+.quote-card::before,
+.quote-card::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border: 1px solid rgb(66 165 255 / .24);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.quote-card::before {
+  width: 9rem; height: 9rem; right: -2.8rem; top: -3.4rem;
+  box-shadow: 0 0 0 12px rgb(66 165 255 / .045), 0 0 0 25px rgb(66 165 255 / .035);
+  animation: bubble-float 6s ease-in-out infinite;
+}
+.quote-card::after {
+  width: 3.2rem; height: 3.2rem; right: 5.5rem; bottom: 1.8rem;
+  background: radial-gradient(circle at 32% 28%, #fff 0 5%, rgb(143 201 255 / .5) 18%, rgb(66 165 255 / .08) 70%);
+  box-shadow: inset -5px -7px 12px rgb(20 115 230 / .12), 0 5px 15px rgb(20 115 230 / .08);
+  animation: bubble-float 4.5s ease-in-out -1s infinite;
+}
+@keyframes bubble-float {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(-8px, -12px, 0); }
+}
+.quote-card h3 {
+  position: relative;
+  font-size: clamp(1.55rem, 3vw, 1.9rem);
+}
+.quote-card .btn-primary,
+#open-quote {
+  min-height: 3.35rem;
+  padding-inline: 1.5rem;
+  border: 1px solid rgb(255 255 255 / .32);
+  border-radius: .85rem;
+  background: linear-gradient(115deg, #075fc5, #1684f5 48%, #075fc5);
+  background-size: 220% 100%;
+  box-shadow: 0 10px 25px rgb(20 115 230 / .3), inset 0 1px 0 rgb(255 255 255 / .28);
+  animation: quote-pulse 3.2s ease-in-out infinite;
+}
+.quote-card .btn-primary:hover,
+#open-quote:hover {
+  background-position: 100% 0;
+  box-shadow: 0 13px 30px rgb(20 115 230 / .4);
+}
+@keyframes quote-pulse {
+  0%, 100% { box-shadow: 0 10px 25px rgb(20 115 230 / .25), inset 0 1px 0 rgb(255 255 255 / .28); }
+  50% { box-shadow: 0 12px 32px rgb(20 115 230 / .42), 0 0 0 5px rgb(66 165 255 / .08), inset 0 1px 0 rgb(255 255 255 / .28); }
+}
+#cotizador .section-title { max-width: 16ch; }
+#cotizador .quote-card p { max-width: 34rem; }
+@media (max-width: 600px) {
+  .hero-mark { font-size: clamp(5rem, 21vw, 7.2rem); }
+  .hero-copy { padding-block: 4.2rem 3.5rem; }
+  .hero-kicker { max-width: 34ch; line-height: 1.6; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-mark, .hero-mark::after, .hero::after, .quote-card::before, .quote-card::after,
+  .quote-card .btn-primary, #open-quote { animation: none !important; }
+}
