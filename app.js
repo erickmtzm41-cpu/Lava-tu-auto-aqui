@@ -2,7 +2,7 @@ const PHONE = "524251079351";
 const HELLO = "Hola, Auto Lavado HMTZL. Quiero información de sus servicios.";
 
 const VEHICLES = [
-  { id: "auto", name: "Auto", label: "$120" },
+  { id: "auto", name: "Auto", label: "Desde $140" },
   { id: "camioneta", name: "Camioneta", label: "$150 - $180" },
   { id: "camion", name: "Camión", label: "$350" },
   { id: "moto", name: "Moto", label: "$80" },
@@ -43,7 +43,7 @@ function money(amount) {
 }
 
 function vehiclePrice() {
-  if (vehicle === "auto") return 120;
+  if (vehicle === "auto") return 140;
   if (vehicle === "camioneta") return suv === "grande" ? 180 : 150;
   if (vehicle === "camion") return 350;
   return 80;
