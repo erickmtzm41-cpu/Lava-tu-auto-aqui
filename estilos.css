@@ -486,3 +486,42 @@ h1, h2, h3, p, ul { margin: 0; }
 .package-card:hover img { transform: scale(1.035); filter: saturate(1.08) contrast(1.03); }
 .package-meta { padding: .95rem .7rem .75rem; }
 .package-price { color: #1269c4; }
+
+
+/* Ajustes de identidad y acceso directo al cotizador */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .75rem;
+  margin-top: 1.8rem;
+}
+.hero-copy .hero-actions .btn { margin-top: 0; }
+.btn-hero-secondary {
+  border: 1px solid rgb(255 255 255 / .62);
+  background: rgb(8 25 43 / .28);
+  color: #fff;
+  backdrop-filter: blur(8px);
+}
+.btn-hero-secondary:hover {
+  border-color: #fff;
+  background: rgb(255 255 255 / .12);
+}
+.script-line { max-width: 22ch; }
+.footer-motto {
+  color: #1269c4;
+  letter-spacing: .1em;
+  line-height: 1.5;
+}
+.quote-kicker {
+  position: relative;
+  margin-bottom: .65rem;
+  font-size: .68rem;
+  letter-spacing: .16em;
+}
+#open-quote { width: min(100%, 20rem); }
+@media (max-width: 480px) {
+  .hero-actions { align-items: stretch; }
+  .hero-actions .btn { width: 100%; }
+  .footer-motto { max-width: 23rem; }
+}
