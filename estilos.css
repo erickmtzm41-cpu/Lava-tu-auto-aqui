@@ -525,3 +525,285 @@ h1, h2, h3, p, ul { margin: 0; }
   .hero-actions .btn { width: 100%; }
   .footer-motto { max-width: 23rem; }
 }
+
+
+/* HMTZL · Evolución visual Premium Blue Automotive */
+:root {
+  color-scheme: dark;
+  --color-night: #edf6ff;
+  --color-abyss: #06111e;
+  --color-panel: #0d1c2d;
+  --color-panel-2: #10243a;
+  --color-line: rgb(113 166 218 / .22);
+  --color-mist: #a9bfd4;
+  --color-snow: #f7fbff;
+  --color-accent: #168cff;
+  --color-accent-2: #55c7ff;
+  --color-glow: #39baff;
+  --color-script: #55c7ff;
+  --shadow-card: 0 22px 55px rgb(0 0 0 / .28);
+}
+body {
+  background: #071321;
+  color: #edf6ff;
+}
+.site-header {
+  background: rgb(4 13 24 / .92);
+  border-bottom-color: rgb(81 160 231 / .24);
+  box-shadow: 0 8px 35px rgb(0 0 0 / .2);
+}
+.logo { color: #f4f9ff; }
+.logo-sub { color: #8bbce8; }
+.nav-link { color: #c0d1e2; }
+.nav-link:hover, .nav-link:focus-visible, .nav-link-active { color: #58c8ff; border-bottom-color: #20a8ff; }
+.status-block .text-mist { color: #9eb8d0; }
+.hero {
+  min-height: min(46rem, calc(100svh - 4.5rem));
+  background: #06111e;
+}
+.hero::before {
+  background-image: url("https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=2200&q=90");
+  background-position: center 56%;
+  filter: saturate(1.18) contrast(1.08);
+}
+.hero-shade {
+  background:
+    radial-gradient(ellipse at 74% 50%, rgb(0 132 255 / .12), transparent 42%),
+    linear-gradient(90deg, rgb(3 12 23 / .96) 0%, rgb(4 17 31 / .83) 43%, rgb(4 17 31 / .24) 100%),
+    linear-gradient(0deg, #071321 0%, transparent 32%);
+}
+.hero-copy { width: min(47rem, 100%); padding-block: 6rem; }
+.hero-kicker { color: #a8d9ff; letter-spacing: .17em; }
+.hero-tag { color: #f3f8ff; max-width: 24ch; }
+.script-line {
+  color: #59c8ff;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(1.15rem, 2.4vw, 1.65rem);
+  font-weight: 900;
+  letter-spacing: -.035em;
+  text-transform: uppercase;
+}
+.feature { color: #d5e6f6; }
+.feature + .feature { border-left-color: rgb(123 193 255 / .35); }
+.btn-primary {
+  background: linear-gradient(115deg, #0873df, #18a9ff);
+  box-shadow: 0 12px 30px rgb(0 126 255 / .3);
+}
+.btn-wa { background: #087e57; color: white; }
+.btn-hero-secondary {
+  border-color: rgb(161 205 245 / .62);
+  background: rgb(4 18 33 / .48);
+}
+.band {
+  background: #081625;
+  border-top: 1px solid rgb(81 160 231 / .1);
+}
+.band:nth-of-type(even) { background: #0a1b2c; }
+.eyebrow { color: #58c3ff; }
+.section-title { color: #f2f7ff; }
+.lede { color: #a8bfd5; }
+.accent-bar {
+  width: 4.5rem;
+  background: linear-gradient(90deg, #0878e7, #5bd2ff);
+  box-shadow: 0 0 18px rgb(39 170 255 / .45);
+}
+.card, .package-card, .services-panel {
+  border-color: rgb(112 171 225 / .28);
+  background: linear-gradient(145deg, #12263a, #091827);
+  color: #edf6ff;
+  box-shadow: 0 18px 42px rgb(0 0 0 / .24);
+}
+.package-card:hover, .card:hover {
+  border-color: #3aaeff;
+  box-shadow: 0 20px 48px rgb(0 105 210 / .2);
+}
+.package-card img {
+  border-radius: .65rem;
+  filter: saturate(1.1) contrast(1.04);
+}
+.package-name { color: #f3f8ff; }
+.package-price { color: #56c5ff; }
+.package-kind { color: #8faecb; }
+.services-panel h3 { color: #f4f8ff; }
+.icon-bubble { background: rgb(20 137 255 / .16); color: #64caff; }
+.extra-row {
+  color: #d7e8f8;
+  border-bottom-color: rgb(130 174 214 / .16);
+}
+.extra-row strong { color: #65c8ff; }
+.extra-row:hover, .extra-row:focus-visible { color: #66caff; }
+.btn-ghost, .btn-quiet {
+  border-color: rgb(108 180 242 / .4);
+  color: #d8edff;
+  background: rgb(20 115 230 / .12);
+}
+.why { color: #eaf4ff; }
+.reason { color: #dceafa; }
+.reason::before {
+  content: "✦";
+  color: #54c5ff;
+  font-size: 1.05rem;
+}
+.hands { color: #83cfff; }
+.quote-card {
+  border-color: rgb(82 177 255 / .42);
+  border-radius: 1.25rem;
+  background:
+    radial-gradient(circle at 95% 5%, rgb(28 150 255 / .2), transparent 35%),
+    linear-gradient(145deg, #132d46, #081725 75%);
+  box-shadow: 0 24px 60px rgb(0 0 0 / .32), 0 0 32px rgb(0 119 255 / .08);
+}
+.quote-card p { color: #b7cce0; }
+.quote-card h3 { color: #f5f9ff; }
+.pick {
+  border-color: rgb(122 178 226 / .3);
+  background: #0a1b2b;
+  color: #e8f4ff;
+}
+.pick:hover { border-color: #45baff; color: #62caff; }
+.visit { border-top-color: rgb(113 166 218 / .22); }
+.visit h2 { color: #f0f7ff; }
+.address, .note { color: #a8bfd5; }
+.shot, .work-item {
+  border-color: rgb(113 166 218 / .25);
+  background-color: #0b1c2d;
+}
+.work-item figcaption { background: #0c1d2e; }
+.work-item figcaption strong { color: #eef7ff; }
+.work-item figcaption span { color: #9db8d0; }
+.faq-item {
+  border-color: rgb(113 166 218 / .22);
+  background: linear-gradient(145deg, #11263b, #0a1928);
+  box-shadow: 0 12px 28px rgb(0 0 0 / .16);
+}
+.faq-item summary { color: #eaf5ff; }
+.faq-item p { color: #aec3d8; }
+.faq-item:hover, .faq-item[open] {
+  border-color: #329fe9;
+  box-shadow: 0 12px 30px rgb(0 105 210 / .15);
+}
+.faq-item[open] summary { color: #60c8ff; }
+.phone-link { color: #4dd7a0; }
+.site-footer {
+  border-top-color: rgb(76 159 231 / .3);
+  background: #040e19;
+}
+.footer-motto { color: #64c9ff; }
+.footer-copy, .made { color: #8fa9c2; }
+.social {
+  border-color: rgb(117 176 225 / .28);
+  color: #d9edff;
+}
+.mobile-nav {
+  background: #081827;
+  border-color: rgb(113 166 218 / .25);
+}
+.mobile-nav .nav-link { color: #d8e9f8; }
+.sheet {
+  border-color: rgb(104 177 238 / .35);
+  background: #0c1c2d;
+  color: #edf6ff;
+}
+.sheet-copy, .fine, .field-label { color: #a8bfd5; }
+.sheet-title { color: #f3f8ff; }
+.field {
+  border-color: rgb(113 166 218 / .35);
+  background: #071625;
+  color: #f2f8ff;
+}
+.field::placeholder { color: #829bb3; }
+.choice {
+  border-color: rgb(113 166 218 / .28);
+  background: #10243a;
+  color: #eaf5ff;
+}
+.choice-on {
+  border-color: #31aaff;
+  background: rgb(20 115 230 / .2);
+  box-shadow: inset 0 0 0 1px #31aaff;
+}
+.total-bar {
+  border-color: rgb(113 166 218 / .25);
+  background: #10243a;
+}
+.total-figure { color: #63caff; }
+.brand-statement {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(3.4rem, 8vw, 6.5rem) 0;
+  border-top: 1px solid rgb(70 163 241 / .24);
+  border-bottom: 1px solid rgb(70 163 241 / .24);
+  background:
+    radial-gradient(ellipse at 80% 45%, rgb(0 133 255 / .2), transparent 42%),
+    linear-gradient(115deg, #06111e, #0d2943 58%, #061321);
+}
+.brand-statement::after {
+  content: "H";
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-54%);
+  color: rgb(113 190 255 / .045);
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(18rem, 38vw, 34rem);
+  font-weight: 900;
+  line-height: .7;
+  pointer-events: none;
+}
+.brand-statement-inner { position: relative; z-index: 1; max-width: 850px; }
+.brand-index {
+  color: #66caff;
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .2em;
+}
+.brand-statement h2 {
+  margin-top: 1rem;
+  color: #f5f9ff;
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  font-weight: 900;
+  letter-spacing: -.065em;
+  line-height: .98;
+}
+.brand-statement h2 span {
+  color: #56c7ff;
+  text-shadow: 0 0 28px rgb(38 159 255 / .2);
+}
+.brand-statement-inner > p:not(.brand-index) {
+  max-width: 42rem;
+  margin-top: 1.35rem;
+  color: #bdd0e2;
+  font-size: clamp(.98rem, 1.8vw, 1.12rem);
+  line-height: 1.8;
+}
+.brand-signature {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  margin-top: 1.8rem;
+  color: #8dbce5;
+  font-size: .68rem;
+  font-weight: 900;
+  letter-spacing: .16em;
+}
+.brand-signature span {
+  display: inline-block;
+  width: 2.4rem;
+  height: 2px;
+  background: linear-gradient(90deg, #0878e7, #5bd2ff);
+  box-shadow: 0 0 12px #168cff;
+}
+@media (max-width: 767px) {
+  .hero { min-height: 39rem; }
+  .hero-shade {
+    background:
+      linear-gradient(180deg, rgb(4 14 26 / .4), rgb(4 14 26 / .76) 48%, #071321 100%);
+  }
+  .hero-copy { padding-block: 4.5rem 3rem; }
+  .brand-statement { padding-block: 3.8rem; }
+  .brand-signature { align-items: flex-start; line-height: 1.6; }
+  .brand-signature span { margin-top: .55rem; flex: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .brand-statement::after { transition: none; }
+}
