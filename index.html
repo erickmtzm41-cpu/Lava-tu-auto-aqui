@@ -15,6 +15,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Great+Vibes&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="estilos.css" />
   <style>
+    .hmtzl-ecosystem { background: linear-gradient(135deg,#071321 0%,#102b45 100%); color:#fff; padding-top:4.2rem; padding-bottom:4.2rem; }
+    .ecosystem-heading { max-width:760px; margin-bottom:2rem; }
+    .ecosystem-heading .eyebrow { color:#67b4ff; }
+    .ecosystem-heading .section-title { color:#fff; }
+    .ecosystem-heading .section-title span { color:#67b4ff; }
+    .ecosystem-heading .lede { color:#d8e4ef; }
+    .ecosystem-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.2rem; }
+    .ecosystem-card { position:relative; min-height:290px; padding:2rem; border:1px solid rgba(255,255,255,.18); border-radius:1.2rem; background:rgba(255,255,255,.065); overflow:hidden; }
+    .ecosystem-card:after { content:""; position:absolute; width:190px; height:190px; right:-65px; bottom:-85px; border:1px solid rgba(255,255,255,.12); border-radius:50%; box-shadow:0 0 0 22px rgba(255,255,255,.025),0 0 0 45px rgba(255,255,255,.02); }
+    .ecosystem-delivery { background:linear-gradient(145deg,rgba(255,138,50,.16),rgba(255,255,255,.045)); }
+    .ecosystem-number { color:#9fb4c8; font-size:.7rem; font-weight:800; letter-spacing:1.7px; }
+    .ecosystem-symbol { display:grid; place-items:center; width:48px; height:48px; margin:1.2rem 0 .8rem; border-radius:13px; background:#1473e6; color:#fff; font-size:1.5rem; font-weight:900; }
+    .ecosystem-delivery .ecosystem-symbol { background:#ff8a32; color:#101820; }
+    .ecosystem-card h3 { margin:0 0 .65rem; color:#fff; font-size:1.55rem; }
+    .ecosystem-card p { max-width:490px; min-height:4.5rem; color:#d8e4ef; line-height:1.65; }
+    .ecosystem-link { position:relative; z-index:1; display:inline-flex; gap:.65rem; align-items:center; margin-top:.9rem; color:#fff; font-weight:800; text-decoration:none; border-bottom:1px solid rgba(255,255,255,.4); padding-bottom:.35rem; }
+    .ecosystem-link span { color:#ff9b45; }
+    .ecosystem-footnote { margin:1.5rem 0 0; color:#b8c8d7; font-size:.88rem; }
+    .ecosystem-footnote a { color:#fff; font-weight:800; }
     .faq-list { display: grid; gap: .75rem; margin-top: 1.5rem; }
     .faq-item { padding: 1rem 1.15rem; border: 1px solid var(--color-line); border-radius: .85rem; background: #fff; box-shadow: var(--shadow-card); }
     .faq-item summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; color: #10243a; font-weight: 800; cursor: pointer; list-style: none; }
@@ -99,21 +118,30 @@
       </div>
     </section>
 
-    <section id="mandados-express" class="band" style="background:linear-gradient(135deg,#071321 0%,#102b45 100%);color:#fff;">
-      <div class="wrap" style="display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center;padding-top:3rem;padding-bottom:3rem;">
-        <div>
-          <p class="eyebrow" style="color:#ff9b45;">OTRO SERVICIO · NUEVA EXPERIENCIA</p>
-          <h2 class="section-title" style="color:#fff;">¿Necesitas algo?<br/><span style="color:#ff9b45;">Te lo llevamos.</span></h2>
-          <p class="lede" style="color:#d8e4ef;">Conoce Mandados Express: solicita productos y encargos desde un solo lugar. Arma tu pedido y envíalo directamente por WhatsApp para confirmar disponibilidad y costo.</p>
-          <a class="btn" style="display:inline-flex;margin-top:1rem;background:#ff8a32;color:#111827;font-weight:800;" href="mandados-express/index.html">Entrar a Mandados Express</a>
+    <section id="mandados-express" class="band hmtzl-ecosystem">
+      <div class="wrap">
+        <div class="ecosystem-heading">
+          <p class="eyebrow">HMTZL · UN MISMO ORIGEN, DISTINTAS SOLUCIONES</p>
+          <h2 class="section-title">Un solo punto de entrada.<br/><span>Más formas de ayudarte.</span></h2>
+          <p class="lede">HMTZL reúne servicios independientes bajo una misma identidad. Elige lo que necesitas y conserva siempre el acceso a nuestra plataforma principal.</p>
         </div>
-        <div style="border:1px solid rgba(255,255,255,.18);border-radius:1.25rem;padding:1.5rem;background:rgba(255,255,255,.07);">
-          <p style="font-size:1.05rem;font-weight:800;margin-bottom:.8rem;">MANDADOS EXPRESS</p>
-          <p style="color:#d8e4ef;margin-bottom:1rem;">Tu pedido, sin vueltas.</p>
-          <p style="color:#d8e4ef;">✓ Elige lo que necesitas</p>
-          <p style="color:#d8e4ef;">✓ Agrega tus indicaciones</p>
-          <p style="color:#d8e4ef;">✓ Envía tu solicitud por WhatsApp</p>
+        <div class="ecosystem-grid">
+          <article class="ecosystem-card ecosystem-wash">
+            <div class="ecosystem-number">01 / CUIDADO AUTOMOTRIZ</div>
+            <div class="ecosystem-symbol">H</div>
+            <h3>Auto Lavado HMTZL</h3>
+            <p>Lavado y cuidado de tu vehículo en Ario de Rosales. Cotiza, conoce los servicios y coordina la recogida por WhatsApp.</p>
+            <a class="ecosystem-link" href="#paquetes">Conocer Auto Lavado <span>↗</span></a>
+          </article>
+          <article class="ecosystem-card ecosystem-delivery">
+            <div class="ecosystem-number">02 / COMPRAS Y ENCARGOS</div>
+            <div class="ecosystem-symbol">➜</div>
+            <h3>Mandados Express</h3>
+            <p>Arma tu lista de productos o encargo, indica dónde recibirlo y envía tu solicitud directamente por WhatsApp.</p>
+            <a class="ecosystem-link" href="mandados-express/index.html">Entrar a Mandados Express <span>↗</span></a>
+          </article>
         </div>
+        <p class="ecosystem-footnote">Dos servicios. Una misma plataforma HMTZL. <a href="#inicio">Volver al inicio principal</a>.</p>
       </div>
     </section>
     <section id="paquetes" class="band"><div class="wrap">
