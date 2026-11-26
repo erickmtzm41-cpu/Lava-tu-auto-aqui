@@ -59,7 +59,7 @@ function openMenu(){const n=$("mobile-nav");n.hidden=false;n.classList.add("is-o
 function closeMenu(){const n=$("mobile-nav");n.hidden=true;n.classList.remove("is-open");n.setAttribute("aria-hidden","true");$("menu-btn").setAttribute("aria-expanded","false");}
 function closeServices(){$("services-modal").classList.remove("is-open");$("open-services").classList.remove("nav-link-active");}
 function openServices(){const m=$("services-modal"),isOpen=m.classList.contains("is-open");closeMenu();$("quote-modal").classList.remove("is-open");if(isOpen){closeServices();return;}m.classList.add("is-open");$("open-services").classList.add("nav-link-active");}
-function openQuote(next,extra){if(VEHICLES.some(x=>x.id===next))vehicle=next;if(extra&&EXTRAS.some(x=>x.id===extra))extras=[extra];else if(next!==undefined)extras=[];closeMenu();closeServices();$("quote-modal").classList.add("is-open");renderQuote();}
+function openQuote(next,extra){if(VEHICLES.some(x=>x.id===next))vehicle=next;extras=extra&&EXTRAS.some(x=>x.id===extra)?[extra]:[];closeMenu();closeServices();$("quote-modal").classList.add("is-open");renderQuote();}
 const quoteModal=$("quote-modal");
 $("menu-btn").addEventListener("click",()=> $("mobile-nav").classList.contains("is-open")?closeMenu():openMenu());
 window.addEventListener("resize",()=>{if(window.innerWidth>=1024)closeMenu();});
