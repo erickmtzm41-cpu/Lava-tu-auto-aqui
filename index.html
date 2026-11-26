@@ -7,6 +7,8 @@
   <meta name="description" content="HMTZL: lavado y cuidado automotriz en Ario de Rosales. Tu auto habla por ti. Que hable bien. Cotiza por WhatsApp." />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#071321" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://images.unsplash.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; base-uri 'self'; form-action 'self'" />
   <meta property="og:title" content="HMTZL | Lavado de autos en Ario de Rosales" />
   <meta property="og:description" content="Servicio de lavado de autos en Ario de Rosales, Michoacán. Consulta paquetes y cotiza por WhatsApp." />
   <meta property="og:type" content="website" />
@@ -50,7 +52,11 @@
   <link rel="canonical" href="https://erickmtzm41-cpu.github.io/Lava-tu-auto-aqui/" />
   <meta property="og:url" content="https://erickmtzm41-cpu.github.io/Lava-tu-auto-aqui/" />
   <meta property="og:locale" content="es_MX" />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:image" content="https://erickmtzm41-cpu.github.io/Lava-tu-auto-aqui/fotos/og.jpg" />
+  <meta property="og:image:alt" content="HMTZL Auto Lavado, servicio de lavado de autos en Ario de Rosales" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <!-- TODO: agregar URLs oficiales verificadas de Facebook y TikTok al campo sameAs. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -67,7 +73,11 @@
     "areaServed": {
       "@type": "City",
       "name": "Ario de Rosales"
-    }
+    },
+    "openingHours": "Mo-Su 09:00-17:00",
+    "image": "https://erickmtzm41-cpu.github.io/Lava-tu-auto-aqui/fotos/og.jpg",
+    "priceRange": "$80-$350",
+    "sameAs": []
   }
   </script>
 </head>
@@ -97,7 +107,7 @@
         <a href="#contacto" class="nav-link" data-spy="contacto">Contacto</a>
       </nav>
       <div class="header-actions">
-        <a class="btn btn-wa" id="wa-hello" target="_blank" rel="noreferrer"><span class="wa-label">WhatsApp</span></a>
+        <a class="btn btn-wa" id="wa-hello" href="https://wa.me/524251079351?text=Hola%20HMTZL%2C%20quiero%20cotizar%20el%20lavado%20de%20mi%20auto" target="_blank" rel="noopener noreferrer"><span class="wa-label">WhatsApp</span></a>
         <div class="status-block"><p class="status-line"><span class="dot" data-dot></span><span data-status>Hoy</span></p><p class="text-micro text-mist">9:00 am – 5:00 pm</p></div>
         <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-label="Abrir menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg></button>
       </div>
@@ -110,7 +120,7 @@
   </header>
   <main>
     <section id="inicio" class="hero"><div class="hero-shade"></div><div class="wrap hero-copy">
-      <p class="hero-kicker">Recogemos y regresamos tu auto en Ario de Rosales</p><h1 class="hero-mark metal">HMTZL</h1><p class="hero-evolution">EN EVOLUCIÓN HACIA EL DETAILING AUTOMOTRIZ</p><p class="hero-tag">Lavado de autos con recogida y entrega a domicilio.</p><p class="script-line">Tu auto habla por ti. Que hable bien.</p>
+      <p class="hero-kicker">Recogemos y regresamos tu auto en Ario de Rosales</p><h1 class="hero-mark metal hero-seo-title">Lavado de autos a domicilio en Ario de Rosales</h1><p class="hero-brand-word" aria-label="Marca HMTZL">HMTZL</p><p class="hero-evolution">EN EVOLUCIÓN HACIA EL DETAILING AUTOMOTRIZ</p><p class="hero-tag">Lavado de autos con recogida y entrega a domicilio.</p><p class="script-line">Tu auto habla por ti. Que hable bien.</p>
       <div class="feature-row"><p class="feature">Lavado de calidad</p><p class="feature">Recogida en tu domicilio</p><p class="feature">Te lo regresamos limpio</p></div>
       <div class="hero-actions"><a class="btn btn-primary" href="#cotizador">Cotiza tu vehículo</a><a class="btn btn-hero-secondary" href="#paquetes">Ver servicios</a></div>
     </div></section>
@@ -155,7 +165,7 @@
       <div class="packages"><div class="package-grid">
         <button type="button" class="card package-card" data-quote="auto"><img src="fotos/auto.svg" alt="Auto sedán"/><div class="package-meta"><p class="package-name">Auto</p><p class="package-price">Desde $140</p><p class="package-kind">SEGÚN CONDICIÓN DEL VEHÍCULO</p></div></button>
         <button type="button" class="card package-card" data-quote="camioneta"><img src="fotos/camioneta.svg" alt="Camioneta SUV"/><div class="package-meta"><p class="package-name">Camioneta</p><p class="package-price">$150 - $180</p><p class="package-kind">LAVADO NORMAL</p></div></button>
-        <button type="button" class="card package-card" data-quote="camion"><div class="package-meta"><p class="package-name">Camión</p><p class="package-price">$350</p><p class="package-kind">LAVADO NORMAL</p></div></button>
+        <button type="button" class="card package-card" data-quote="camion"><img src="fotos/camion.svg" alt="Camión de carga azul HMTZL" loading="lazy" /><div class="package-meta"><p class="package-name">Camión</p><p class="package-price">$350</p><p class="package-kind">LAVADO NORMAL</p></div></button>
         <button type="button" class="card package-card" data-quote="moto"><img src="fotos/moto.svg" alt="Motocicleta"/><div class="package-meta"><p class="package-name">Moto</p><p class="package-price">$80</p><p class="package-kind">LAVADO NORMAL</p></div></button>
       </div>
       <aside id="servicios" class="card services-panel"><div class="services-head"><span class="icon-bubble">✦</span><h3>SERVICIOS<br/>ADICIONALES</h3></div>
@@ -181,19 +191,28 @@
       </div>
     </div></section>
     <section id="ubicacion" class="band"><div class="wrap visit">
-      <div><h2>Servicio en</h2><p class="address">Ario de Rosales, Colonia Obrera. Servicio de lavado de autos con recogida y entrega a domicilio. Pregunta por cobertura para recoger y regresar tu vehículo.</p><a class="btn btn-quiet" href="https://www.google.com/maps/search/?api=1&query=Colonia+Obrera+Ario+de+Rosales+Michoacan+campo+de+futbol" target="_blank" rel="noreferrer">Ver en Google Maps</a>
+      <div><h2>Servicio en</h2><p class="address">Ario de Rosales, Colonia Obrera. Servicio de lavado de autos con recogida y entrega a domicilio. Pregunta por cobertura para recoger y regresar tu vehículo.</p><a class="btn btn-quiet" href="https://www.google.com/maps/search/?api=1&query=Colonia+Obrera+Ario+de+Rosales+Michoacan+campo+de+futbol" target="_blank" rel="noopener noreferrer">Ver en Google Maps</a>
       </div>
-      <a class="shot" href="https://www.google.com/maps/search/?api=1&query=Colonia+Obrera+Ario+de+Rosales+Michoacan+campo+de+futbol" target="_blank" rel="noreferrer"><span class="shot-caption">HMTZL · Ario de Rosales</span></a>
-      <div id="contacto"><h2>Contáctanos</h2><a class="phone-link" id="wa-phone" target="_blank" rel="noreferrer">+52 425 107 9351</a><p class="note">Escríbenos para coordinar la recogida y entrega de tu auto.</p></div>
-      <div><h2>Nuestro trabajo habla por nosotros</h2><p class="note">Estamos preparando esta galería con fotografías reales de nuestros trabajos. Muy pronto podrás ver aquí el cuidado HMTZL.</p></div>
+      <a class="shot" href="https://www.google.com/maps/search/?api=1&query=Colonia+Obrera+Ario+de+Rosales+Michoacan+campo+de+futbol" target="_blank" rel="noopener noreferrer"><span class="shot-caption">HMTZL · Ario de Rosales</span></a>
+      <div id="contacto"><h2>Contáctanos</h2><a class="phone-link" id="wa-phone" href="https://wa.me/524251079351?text=Hola%20HMTZL%2C%20quiero%20cotizar%20el%20lavado%20de%20mi%20auto" target="_blank" rel="noopener noreferrer">+52 425 107 9351</a><p class="note">Escríbenos para coordinar la recogida y entrega de tu auto.</p></div>
+      <div class="work-gallery-block"><h2>Nuestro trabajo habla por nosotros</h2><p class="note">Cada vehículo tiene su historia. Aquí podrás comparar el antes y después de nuestros trabajos.</p>
+        <div class="work-grid" aria-label="Galería de trabajos HMTZL">
+          <!-- TODO: subir fotografías reales a fotos/ con estos nombres. -->
+          <figure class="work-item"><img src="fotos/trabajo-01-antes.jpg" alt="Vehículo antes del lavado HMTZL, trabajo 1" loading="lazy" /><figcaption><strong>Trabajo 01 · Antes</strong><span>Fotografía pendiente de subir</span></figcaption></figure>
+          <figure class="work-item"><img src="fotos/trabajo-01-despues.jpg" alt="El mismo vehículo después del lavado HMTZL, trabajo 1" loading="lazy" /><figcaption><strong>Trabajo 01 · Después</strong><span>Fotografía pendiente de subir</span></figcaption></figure>
+          <figure class="work-item"><img src="fotos/trabajo-02-antes.jpg" alt="Vehículo antes del lavado HMTZL, trabajo 2" loading="lazy" /><figcaption><strong>Trabajo 02 · Antes</strong><span>Fotografía pendiente de subir</span></figcaption></figure>
+          <figure class="work-item"><img src="fotos/trabajo-02-despues.jpg" alt="El mismo vehículo después del lavado HMTZL, trabajo 2" loading="lazy" /><figcaption><strong>Trabajo 02 · Después</strong><span>Fotografía pendiente de subir</span></figcaption></figure>
+          <figure class="work-item"><img src="fotos/trabajo-03-antes.jpg" alt="Vehículo antes del lavado HMTZL, trabajo 3" loading="lazy" /><figcaption><strong>Trabajo 03 · Antes</strong><span>Fotografía pendiente de subir</span></figcaption></figure>
+          <figure class="work-item"><img src="fotos/trabajo-03-despues.jpg" alt="El mismo vehículo después del lavado HMTZL, trabajo 3" loading="lazy" /><figcaption><strong>Trabajo 03 · Después</strong><span>Fotografía pendiente de subir</span></figcaption></figure>
+        </div></div>
     </div></section>
   </main>
-  <footer class="site-footer"><div class="wrap footer-row"><a href="#inicio" class="logo"><span class="logo-word metal">HMTZL</span><span class="logo-sub">Auto lavado</span></a><p class="footer-motto">TU AUTO HABLA POR TI. QUE HABLE BIEN.</p><div class="footer-end"><a class="social" href="https://www.facebook.com/search/top?q=HMTZL%20Auto%20Lavado%20Ario%20de%20Rosales" target="_blank" rel="noreferrer" aria-label="Facebook">f</a><a class="social" href="https://www.tiktok.com/search?q=HMTZL%20Auto%20Lavado" target="_blank" rel="noreferrer" aria-label="TikTok">♪</a><p class="made">Hecho en Ario</p></div></div><p class="footer-copy">© HMTZL. Todos los derechos reservados.</p></footer>
+  <footer class="site-footer"><div class="wrap footer-row"><a href="#inicio" class="logo"><span class="logo-word metal">HMTZL</span><span class="logo-sub">Auto lavado</span></a><p class="footer-motto">TU AUTO HABLA POR TI. QUE HABLE BIEN.</p><div class="footer-end"><a class="social" href="https://www.facebook.com/search/top?q=HMTZL%20Auto%20Lavado%20Ario%20de%20Rosales" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a><a class="social" href="https://www.tiktok.com/search?q=HMTZL%20Auto%20Lavado" target="_blank" rel="noopener noreferrer" aria-label="TikTok">♪</a><p class="made">Hecho en Ario</p></div></div><p class="footer-copy">© HMTZL. Todos los derechos reservados.</p></footer>
   <div class="modal-root" id="quote-modal"><div class="overlay" data-close></div><div class="sheet" role="dialog" aria-modal="true" aria-labelledby="quote-title"><div class="sheet-head"><div><p class="eyebrow">Cotizador</p><h2 class="sheet-title" id="quote-title">Cotiza en segundos</h2><p class="sheet-copy">Elige tu vehículo y adicionales; te abrimos WhatsApp con el total.</p></div><button type="button" class="icon-btn" data-close aria-label="Cerrar">✕</button></div>
     <label class="field-label" for="quote-name">Nombre</label><input id="quote-name" class="field" maxlength="60" placeholder="Cómo te saludamos" /><p class="field-label">Vehículo</p><div class="choice-grid" id="vehicle-choices"></div>
     <div class="suv-row" id="suv-row" hidden><p>El precio se confirma según el tamaño y las condiciones del vehículo.</p><div class="choice-grid choice-grid-2"><button type="button" class="choice" data-suv="estandar"><span>Estándar</span><strong>$150</strong></button><button type="button" class="choice" data-suv="grande"><span>Grande</span><strong>$180</strong></button></div></div>
     <p class="field-label">Paquete</p><div class="choice choice-on choice-static"><span>Lavado normal</span><strong id="pack-price">$140</strong></div><p class="field-label">Servicios adicionales</p><ul class="extra-list" id="extra-choices"></ul>
-    <div class="total-bar"><div><p class="eyebrow">Total estimado</p><p class="total-figure" id="total">$140</p></div><a class="btn btn-wa" id="wa-send" target="_blank" rel="noreferrer">Enviar por WhatsApp</a></div><p class="fine">Precios en pesos mexicanos. El total final se confirma al coordinar el servicio.</p>
+    <div class="total-bar"><div><p class="eyebrow">Total estimado</p><p class="total-figure" id="total">$140</p></div><a class="btn btn-wa" id="wa-send" target="_blank" rel="noopener noreferrer">Enviar por WhatsApp</a></div><p class="fine">Precios en pesos mexicanos. El total final se confirma al coordinar el servicio.</p>
   </div></div>
   <div class="modal-root" id="services-modal"><div class="overlay" data-close-services></div><div class="sheet" role="dialog" aria-modal="true" aria-labelledby="services-title"><div class="sheet-head"><div><p class="eyebrow">Servicios</p><h2 class="sheet-title" id="services-title">Todo el menú</h2><p class="sheet-copy">Lavado normal por tipo de vehículo y servicios adicionales.</p></div><button type="button" class="icon-btn" data-close-services aria-label="Cerrar">✕</button></div>
     <p class="field-label">Lavado normal</p><ul class="extra-list"><li><button type="button" class="extra-row" data-quote="auto"><span>Auto</span><strong>Desde $140</strong></button></li><li><button type="button" class="extra-row" data-quote="camioneta"><span>Camioneta</span><strong>$150 - $180</strong></button></li><li><button type="button" class="extra-row" data-quote="camion"><span>Camión</span><strong>$350</strong></button></li><li><button type="button" class="extra-row" data-quote="moto"><span>Moto</span><strong>$80</strong></button></li></ul>
