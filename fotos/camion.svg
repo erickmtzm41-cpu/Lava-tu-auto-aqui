@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-labelledby="t d">
+<title id="t">Camión de carga azul HMTZL</title><desc id="d">Camión de carga azul metálico con cabina y caja, sobre fondo azul oscuro e iluminación de estudio.</desc>
+<defs>
+<linearGradient id="bg" x2="0" y2="1"><stop stop-color="#102b47"/><stop offset="1" stop-color="#071421"/></linearGradient>
+<radialGradient id="halo"><stop stop-color="#2b75b5" stop-opacity=".45"/><stop offset="1" stop-color="#10243a" stop-opacity="0"/></radialGradient>
+<linearGradient id="paint" x2="0" y2="1"><stop stop-color="#a9dfff"/><stop offset=".2" stop-color="#328fd1"/><stop offset=".65" stop-color="#1260a2"/><stop offset="1" stop-color="#061b31"/></linearGradient>
+<linearGradient id="glass" x2="0" y2="1"><stop stop-color="#bfeaff"/><stop offset=".5" stop-color="#244b6a"/><stop offset="1" stop-color="#0a1d30"/></linearGradient>
+<filter id="blur"><feGaussianBlur stdDeviation="18"/></filter>
+</defs>
+<rect width="900" height="560" fill="url(#bg)"/><ellipse cx="470" cy="285" rx="400" ry="235" fill="url(#halo)"/>
+<path d="M0 430Q450 390 900 430V560H0Z" fill="#4da5e8" opacity=".13"/><ellipse cx="460" cy="445" rx="340" ry="32" fill="#000" opacity=".6" filter="url(#blur)"/>
+<g>
+<path d="M90 180H570V390H90Z" fill="url(#paint)" stroke="#79caff" stroke-width="4"/>
+<path d="M570 265H690Q730 265 752 300L790 360V397H540V300Z" fill="url(#paint)" stroke="#79caff" stroke-width="4"/>
+<path d="M600 280H685Q704 280 720 302L744 335H600Z" fill="url(#glass)" stroke="#b8e5ff" stroke-width="4"/>
+<path d="M110 205H550M110 225H550" stroke="#c5eaff" stroke-opacity=".3" stroke-width="3"/>
+<path d="M90 390H800" stroke="#071522" stroke-width="15"/>
+<path d="M760 356H790" stroke="#ff6574" stroke-width="10" stroke-linecap="round"/>
+<path d="M552 350H580" stroke="#fff4d1" stroke-width="10" stroke-linecap="round"/>
+<g fill="#06101a" stroke="#7aa6c5" stroke-width="6"><circle cx="235" cy="395" r="56"/><circle cx="655" cy="395" r="56"/></g>
+<g fill="#142c40" stroke="#d0e8f7" stroke-width="5"><circle cx="235" cy="395" r="36"/><circle cx="655" cy="395" r="36"/></g>
+<g fill="#83b9d8"><circle cx="235" cy="395" r="12"/><circle cx="655" cy="395" r="12"/></g>
+<g stroke="#9fc9e1" stroke-width="4"><path d="M235 361v68m-34-34h68m-58-24 48 48m0-48-48 48M655 361v68m-34-34h68m-58-24 48 48m0-48-48 48"/></g>
+</g>
+<path d="M100 455H810" stroke="#5db8f5" stroke-opacity=".2" stroke-width="2"/>
+<g fill="#9bd8ff" opacity=".55"><circle cx="130" cy="120" r="2"/><circle cx="760" cy="150" r="3"/><circle cx="680" cy="90" r="2"/></g>
+</svg>
