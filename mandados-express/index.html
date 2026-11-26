@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#101820">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self' 'unsafe-inline'; connect-src 'self'; base-uri 'self'; form-action 'self'">
 <meta name="description" content="Mandados Express, servicio de la plataforma HMTZL. Tus compras y encargos, coordinados directamente por WhatsApp.">
 <title>Mandados Express | HMTZL</title>
 <style>
@@ -32,24 +34,49 @@ footer{background:var(--ink);color:#cbd2d8;padding:27px 0;font-size:13px}.foot{d
 </main>
 <footer><div class="wrap foot"><div><strong>HMTZL · MANDADOS EXPRESS</strong><br>Tus mandados, resueltos.</div><div>Atención y confirmación por WhatsApp · <strong>425 107 9351</strong></div><div><a href="../index.html" style="color:#fff;font-weight:800;text-decoration:none">← Volver a todos los servicios HMTZL</a><br><a href="../index.html#paquetes" style="color:#cbd2d8">Conocer Auto Lavado</a></div></div></footer>
 <script>
+"use strict";
 const PHONE="524251079351";
 const groups={
- "Todos":["Despensa","Farmacia","Comida","Hogar","Mascotas","Papelería","Otros"],
- "Despensa":["Arroz","Frijol","Azúcar","Aceite","Leche","Huevo","Pan","Tortillas","Refresco","Agua","Café","Sal"],
- "Farmacia":["Medicamentos (con receta si aplica)","Material de curación","Artículos de higiene"," vitaminas y cuidado personal"],
- "Comida":["Comida preparada","Antojitos","Panadería","Bebidas"],
- "Hogar":["Productos de limpieza","Papel higiénico","Jabón","Detergente","Focos","Artículos básicos"],
- "Mascotas":["Alimento para perro","Alimento para gato","Arena para gato","Accesorios"],
- "Papelería":["Cuadernos","Plumas y lápices","Copias e impresiones","Material escolar"],
- "Otros":["Otro producto","Recoger un paquete","Pago o trámite (consultar)","Encargo especial"]
+"Todos":["Despensa","Farmacia","Comida","Hogar","Mascotas","Papelería","Otros"],
+"Despensa":["Arroz","Frijol","Azúcar","Aceite","Leche","Huevo","Pan","Tortillas","Refresco","Agua","Café","Sal"],
+"Farmacia":["Medicamentos (con receta si aplica)","Material de curación","Artículos de higiene","Vitaminas y cuidado personal"],
+"Comida":["Comida preparada","Antojitos","Panadería","Bebidas"],
+"Hogar":["Productos de limpieza","Papel higiénico","Jabón","Detergente","Focos","Artículos básicos"],
+"Mascotas":["Alimento para perro","Alimento para gato","Arena para gato","Accesorios"],
+"Papelería":["Cuadernos","Plumas y lápices","Copias e impresiones","Material escolar"],
+"Otros":["Otro producto","Recoger un paquete","Pago o trámite (consultar)","Encargo especial"]
 };
-let active="Todos", selected=[];
-const catalog=document.getElementById("catalog"), categories=document.getElementById("categories"), search=document.getElementById("search"), orderList=document.getElementById("orderList");
-function renderCategories(){categories.innerHTML=groups.Todos.map(c=>'<button class="chip '+(active===c?'active':'')+'" data-cat="'+c+'">'+c+'</button>').join('')+'<button class="chip '+(active==="Todos"?'active':'')+'" data-cat="Todos">Todos</button>';categories.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{active=b.dataset.cat;renderCategories();renderCatalog()}))}
-function renderCatalog(){const q=search.value.trim().toLocaleLowerCase("es");let entries=[];Object.entries(groups).forEach(([cat,items])=>{if(cat==="Todos"||active!=="Todos"&&cat!==active)return;items.forEach(name=>{if(name.toLocaleLowerCase("es").includes(q))entries.push({cat,name})})});catalog.innerHTML=entries.length?entries.map((x,i)=>'<article class="item"><div><strong>'+x.name+'</strong><small>'+x.cat+'</small></div><button class="add" data-index="'+i+'" aria-label="Agregar '+x.name+'">+</button></article>').join(''):'<div class="empty">No encontramos ese producto. Puedes escribirlo en “¿Algo más que debamos buscar?”.</div>';catalog.querySelectorAll(".add").forEach((b,i)=>b.addEventListener("click",()=>{selected.push(entries[i].name);renderOrder()}))}
-function renderOrder(){orderList.innerHTML=selected.length?selected.map((n,i)=>'<li><span>'+n+'</span><button class="remove" data-remove="'+i+'">Quitar</button></li>').join(''):'<li class="muted">Todavía no agregas productos.</li>';orderList.querySelectorAll("[data-remove]").forEach(b=>b.addEventListener("click",()=>{selected.splice(Number(b.dataset.remove),1);renderOrder()}))}
-search.addEventListener("input",renderCatalog);
-document.getElementById("send").addEventListener("click",()=>{const name=document.getElementById("name").value.trim(),address=document.getElementById("address").value.trim(),extra=document.getElementById("extra").value.trim(),notes=document.getElementById("notes").value.trim();if(!name||!address){alert("Escribe tu nombre y la dirección o punto de entrega.");return}if(!selected.length&&!extra){alert("Agrega al menos un producto o encargo.");return}const lines=["Hola, quiero solicitar un mandado con Mandados Express.","","Nombre: "+name,"Entrega: "+address,"","Mi lista:",...(selected.length?selected.map((x,i)=>(i+1)+". "+x):["Sin productos seleccionados"]),...(extra?["","Otro encargo: "+extra]:[]),...(notes?["","Indicaciones: "+notes]:[]),"","Por favor confirmen disponibilidad y costo antes de realizar la compra."];window.open("https://wa.me/"+PHONE+"?text="+encodeURIComponent(lines.join("\n")),"_blank","noopener")});
+let active="Todos",selected=[];
+const $=id=>document.getElementById(id);
+const catalog=$("catalog"),categories=$("categories"),search=$("search"),orderList=$("orderList");
+function clean(value,max){return String(value||"").replace(/[<>]/g,"").replace(/[\u0000-\u001F\u007F]/g," ").replace(/\s+/g," ").trim().slice(0,max);}
+function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;}
+function renderCategories(){
+ categories.replaceChildren();
+ [...groups.Todos,"Todos"].forEach(cat=>{const b=el("button","chip"+(active===cat?" active":""),cat);b.type="button";b.dataset.cat=cat;b.addEventListener("click",()=>{active=cat;renderCategories();renderCatalog();});categories.appendChild(b);});
+}
+function renderCatalog(){
+ const q=clean(search.value,60).toLocaleLowerCase("es"),entries=[];
+ Object.entries(groups).forEach(([cat,items])=>{if(cat==="Todos"||(active!=="Todos"&&cat!==active))return;items.forEach(name=>{if(name.toLocaleLowerCase("es").includes(q))entries.push({cat,name});});});
+ catalog.replaceChildren();
+ if(!entries.length){catalog.appendChild(el("div","empty","No encontramos ese producto. Puedes escribirlo en “¿Algo más que debamos buscar?”."));return;}
+ entries.forEach(item=>{const card=el("article","item"),info=el("div"),strong=el("strong","",item.name),small=el("small","",item.cat),add=el("button","add","+");info.append(strong,small);add.type="button";add.setAttribute("aria-label","Agregar "+item.name);add.addEventListener("click",()=>{if(selected.length>=30){alert("Puedes agregar hasta 30 productos por pedido.");return;}selected.push(item.name);renderOrder();});card.append(info,add);catalog.appendChild(card);});
+}
+function renderOrder(){
+ orderList.replaceChildren();
+ if(!selected.length){orderList.appendChild(el("li","muted","Todavía no agregas productos."));return;}
+ selected.forEach((name,index)=>{const li=el("li"),label=el("span","",name),remove=el("button","remove","Quitar");remove.type="button";remove.addEventListener("click",()=>{selected.splice(index,1);renderOrder();});li.append(label,remove);orderList.appendChild(li);});
+}
+search.addEventListener("input",()=>{const value=clean(search.value,60);if(search.value!==value)search.value=value;renderCatalog();});
+$("send").addEventListener("click",()=>{
+ const name=clean($("name").value,60),address=clean($("address").value,180),extra=clean($("extra").value,300),notes=clean($("notes").value,300);
+ $("name").value=name;$("address").value=address;$("extra").value=extra;$("notes").value=notes;
+ if(!name||!address){alert("Escribe tu nombre y la dirección o punto de entrega.");return;}
+ if(!selected.length&&!extra){alert("Agrega al menos un producto o encargo.");return;}
+ const lines=["Hola, quiero solicitar un mandado con Mandados Express.","","Nombre: "+name,"Entrega: "+address,"","Mi lista:",...(selected.length?selected.map((x,i)=>(i+1)+". "+x):["Sin productos seleccionados"]),...(extra?["","Otro encargo: "+extra]:[]),...(notes?["","Indicaciones: "+notes]:[]),"","Por favor confirmen disponibilidad y costo antes de realizar la compra."];
+ const url="https://wa.me/"+PHONE+"?text="+encodeURIComponent(lines.join("\n"));
+ window.open(url,"_blank","noopener,noreferrer");
+});
 renderCategories();renderCatalog();renderOrder();
 </script>
 </body>
